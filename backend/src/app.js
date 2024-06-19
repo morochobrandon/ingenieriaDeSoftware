@@ -53,7 +53,7 @@ app.get("/manager/agregar/cliente", (req, res) =>
   res.sendFile(rutaFrontend + "/pages/formulario/formularioAgregarCliente.html")
 );
 
-app.get("/carrito/compra/cliente",validarAcceso(usuario.tipo_usuario), (req, res) =>
+app.get("/carrito/compra/cliente", (req, res) =>
   res.sendFile(rutaFrontend + "/pages/manager/carritoDeCompra.html")
 );
 

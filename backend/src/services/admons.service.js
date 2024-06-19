@@ -1,20 +1,20 @@
 const { models } = require("../libs/sequelize");
 
-class PersonsService {
+class AdmonsService {
   constructor() {}
 
   async find() {
-    const res = await models.Person.findAll();
+    const res = await models.Admon.findAll();
     return res;
   }
 
   async findOne(id) {
-    const res = await models.Person.findByPk(id);
+    const res = await models.Admon.findByPk(id);
     return res;
   }
 
   async create(data) {
-    const res = await models.Person.create(data);
+    const res = await models.Admon.create(data);
     return res;
   }
   async update(id, data) {
@@ -29,4 +29,4 @@ class PersonsService {
   }
 }
 
-module.exports = PersonsService;
+module.exports = AdmonsService;

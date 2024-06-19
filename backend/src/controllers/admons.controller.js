@@ -1,5 +1,5 @@
-const PersonsService = require('./../services/persons.service');
-const service = new PersonsService();
+const AdmonsService = require('../services/admons.service');
+const service = new AdmonsService();
 
 const create = async (req, res) => {
   try {

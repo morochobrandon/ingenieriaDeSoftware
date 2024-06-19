@@ -1,21 +1,21 @@
 const { Model, DataTypes } = require("sequelize");
 
-const PERSON_TABLE = "usuarios";
+const MANAGER_TABLE = "managers";
 
-class User extends Model {
+class Manager extends Model {
   static config(sequelize) {
     return {
       sequelize,
-      tableName: PERSON_TABLE,
-      modeloName: "User",
+      tableName: MANAGER_TABLE,
+      modeloName: "Manager",
       timestamps: true,
-    }
+    };
   }
 }
 
 
 
-const UserSchema = {
+const ManagerSchema = {
   id: {
     allowNull: false,
     autoIncrement: true,
@@ -44,4 +44,4 @@ const UserSchema = {
   },
 };
 
-module.exports = { User, UserSchema };
+module.exports = { Manager, ManagerSchema };

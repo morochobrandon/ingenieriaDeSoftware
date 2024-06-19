@@ -2,7 +2,7 @@ const { Model, DataTypes } = require("sequelize");
 
 const PRODUCT_TABLE = "productos venta";
 
-class ProductSale extends Model {
+class Product extends Model {
   static config(sequelize) {
     return {
       sequelize,
@@ -36,7 +36,7 @@ const ProductSchema = {
     field: "tipo",
   },
   imagen: {
-    allowNull: false, 
+    allowNull: false,
     type: DataTypes.STRING,
     field: "imagen",
   },
