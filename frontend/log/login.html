@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/pages/log/login.css">
+     <script src="/pages/log/login.js" defer></script>   
+</head>
+
+<body>
+
+    <div class="container" id="container">
+        <div class="form-container sign-in">
+            <form id="login-form">
+                <h1>Iniciar Sesión</h1>
+                <span>usa tu usuario y contraseña</span>
+                <input name="user" type="user" placeholder="Usuario">
+                <input name="password" type="password" placeholder="Contraseña">
+                <a href="#">¿Olvidaste la contraseña?</a>
+                <button onclick=entrar()>Entrar</button>
+                 <p class="error escondido">Error al iniciar sesión</p>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter your personal details to use all of site features</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <img src="/assets/image/PequeñoLogo.png" class="imagen-responsiva" alt="foto logo de empresa">
+                    <h2>Bienvenido</h2>
+                    <p>Sistema administrativo Meriandes</p>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" href="/UI/footer/FooterGeneral.css">
+	<link rel="stylesheet" href="/sections/formularioBase.css">
+    <link rel="stylesheet" href="/UI/Header/headerGeneral.css">
+
+      <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+	<script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+	<title>Datos clientes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+	<header>
+        <div class="logo">	<a href="/admin"><img src="/assets/image/DiminutoLogo.png" alt="Logo" id="logo"></a></div>
+        <input type="checkbox" id="nav_check" hidden>
+        <nav>
+            <ul>
+              <li>
+                    <a href="/manager/agregar/cliente">Préstamos</a>
+                </li>
+                <li>
+                    <a href="">Ventas</a>
+                </li>
+                <li>
+                    <a href="/pages/formulario/formularioAgregarProveedor.html">Proveedor</a>
+                </li>
+                <li>
+                    <a href="/pages/formulario/formularioAgregarMateriaPrima.html">Materia Prima</a>
+                </li>
+                <li>
+                    <a href="/paginaWeb">Cerrar Sesión</a>
+                </li>
+            </ul>
+        </nav>
+        <label for="nav_check" class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+    </header>
+
+
+	<main>
+          <div class="container">
+        <h2>Registration</h2>
+        <form action="#">
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Personal Details</span>
+                    <div class="fields">
+                        <div class="input-box">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="Enter your name" required>
+                        </div>
+                        <div class="input-box">
+                            <label>Date of Birth</label>
+                            <input type="date" placeholder="Enter birth date" required>
+                        </div>
+                        <div class="input-box">
+                            <label>Email</label>
+                            <input type="text" placeholder="Enter your email" required>
+                        </div>
+                        <div class="input-box">
+                            <label>Mobile Number</label>
+                            <input type="number" placeholder="Enter mobile number" required>
+                        </div>
+                        <div class="input-box">
+                            <label>Gender</label>
+                            <select required>
+                                <option disabled selected>Select gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Others</option>
+                            </select>
+                        </div>
+                        <div class="input-box">
+                            <label>Occupation</label>
+                            <input type="text" placeholder="Enter your ccupation" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="details ID">
+                    <span class="title">Identity Details</span>
+                    <div class="fields">
+                        <div class="input-box">
+                            <label>ID Type</label>
+                            <input type="text" placeholder="Enter ID type" required>
+                        </div>
+                        <div class="input-box">
+                            <label>ID Number</label>
+                            <input type="number" placeholder="Enter ID number" required>
+                        </div>
+                        <div class="input-box">
+                            <label>Issued Authority</label>
+                            <input type="text" placeholder="Enter issued authority" required>
+                        </div>
+                        <div class="input-box">
+                            <label>Issued State</label>
+                            <input type="text" placeholder="Enter issued state" required>
+                        </div>
+                        <div class="input-box">
+                            <label>Issued Date</label>
+                            <input type="date" placeholder="Enter your issued date" required>
+                        </div>
+                        <div class="input-box">
+                            <label>Expiry Date</label>
+                            <input type="date" placeholder="Enter expiry date" required>
+                        </div>
+                    </div>
+                    <button class="nextBtn">
+                        <span class="btnText">Next</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                </div> 
+            </div>
+            <div class="form second">
+                <div class="details address">
+                    <span class="title">Address Details</span>
+                    <div class="fields">
+                        <div class="input-box">
+                            <label>Address Type</label>
+                            <input type="text" placeholder="Permanent or Temporary" required>
+                        </div>
+                        <div class="input-box">
+                            <label>Nationality</label>
+                            <input type="text" placeholder="Enter nationality" required>
+                        </div>
+                        <div class="input-box">
+                            <label>State</label>
+                            <input type="text" placeholder="Enter your state" required>
+                        </div>
+                        <div class="input-box">
+                            <label>District</label>
+                            <input type="text" placeholder="Enter your district" required>
+                        </div>
+                        <div class="input-box">
+                            <label>Block Number</label>
+                            <input type="number" placeholder="Enter block number" required>
+                        </div>
+                        <div class="input-box">
+                            <label>Ward Number</label>
+                            <input type="number" placeholder="Enter ward number" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="details family">
+                    <span class="title">Family Details</span>
+                    <div class="fields">
+                        <div class="input-box">
+                            <label>Father Name</label>
+                            <input type="text" placeholder="Enter father name" required>
+                        </div>
+                        <div class="input-box">
+                            <label>Mother Name</label>
+                            <input type="text" placeholder="Enter mother name" required>
+                        </div>
+                        <div class="input-box">
+                            <label>Grandfather</label>
+                            <input type="text" placeholder="Enter grandfther name" required>
+                        </div>
+                        <div class="input-box">
+                            <label>Spouse Name</label>
+                            <input type="text" placeholder="Enter spouse name" required>
+                        </div>
+                        <div class="input-box">
+                            <label>Father in Law</label>
+                            <input type="text" placeholder="Father in law name" required>
+                        </div>
+                        <div class="input-box">
+                            <label>Mother in Law</label>
+                            <input type="text" placeholder="Mother in law name" required>
+                        </div>
+                    </div>
+
+                </div> 
+            </div>
+        </form>
+    </div>
+	</main>
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#">
+                        <img src="/assets/image/PequeñoLogo.png" alt="Logo de Meriandes">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h3>SOBRE NOSOTROS</h3>
+                <p>En Meriandes, nuestra misión es proporcionar comidas nutritivas y equilibradas a los estudiantes de las escuelas de Caracas</p>
+                <p>Creemos que una buena alimentación es esencial para el desarrollo físico y mental de los niños y niñas, y estamos comprometidos a garantizar que cada estudiante tenga acceso a alimentos de calidad. </p>
+            </div>
+            <div class="box">
+                <h3>SIGUENOS</h3>
+                <div class="red-social">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2024 <b>Meriandes</b> - Las mejores comidas</small>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="/components/alertas/sweetAlert.js"></script>
+</body>
+</html>

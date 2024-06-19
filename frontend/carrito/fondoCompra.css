@@ -1,0 +1,36 @@
+:root {
+    --color-acento: #ee6130;
+    --color-acento-claro: #ee613033;
+    --color-texto: black;
+}
+
+body {
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+h3,
+p {
+    margin: 5px;
+}
+
+.escondido {
+    display: none;
+}
+
+a {
+    background-color: unset;
+    border: unset;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 200ms;
+    color: var(--color-texto);
+}
+
+button {
+    transition: 200ms;
+}
+

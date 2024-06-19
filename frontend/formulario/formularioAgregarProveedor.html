@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" href="/UI/footer/FooterGeneral.css">
+	<link rel="stylesheet" href="/sections/formularioBase.css">
+    <link rel="stylesheet" href="/UI/Header/headerGeneral.css">
+
+      <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+	<script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+	<title>Datos clientes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+	<header>
+        <div class="logo">	<a href="/admin"><img src="/assets/image/DiminutoLogo.png" alt="Logo" id="logo"></a></div>
+        <input type="checkbox" id="nav_check" hidden>
+        <nav>
+            <ul>
+              <li>
+                    <a href="/manager/agregar/cliente">Préstamos</a>
+                </li>
+                <li>
+                    <a href="">Ventas</a>
+                </li>
+                <li>
+                    <a href="/pages/formulario/formularioAgregarProveedor.html">Proveedor</a>
+                </li>
+                <li>
+                    <a href="/pages/formulario/formularioAgregarMateriaPrima.html">Materia Prima</a>
+                </li>
+                <li>
+                    <a href="/paginaWeb">Cerrar Sesión</a>
+                </li>
+            </ul>
+        </nav>
+        <label for="nav_check" class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+    </header>
+
+
+	<main>
+          <div class="container">
+        <h2>Registrar Proveedor</h2>
+          <form id="form-first" action="http://localhost:3000/api/v1/suppliers" method="POST">
+            <div>
+                <div class="details personal">
+                    <span class="title">Detalles del proveedor</span>
+                    <div class="fields">
+                        <div class="input-box">
+                            <label>Nombre</label>
+                            <input type="text" name="nombre" placeholder="Introduce el nombre del proveedor" required>
+                        </div>
+                
+                            <div class="input-box">
+                                <label for="phonenumber">Numero de telefono</label>
+                                <input type="text" name="nro_telefono" placeholder="Introduce el numero de telefono" required>
+                            </div>
+
+                        <div class="input-box">
+                            <label>Numero de factura</label>
+                            <input type="text" name="nro_factura" placeholder="Introduce el tipo de proveedor" required>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="boton-grande">
+                    <span class="button-container">Agregar</span>
+                </button>
+            </div> 
+        </form>
+    </div>
+	</main>
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#">
+                        <img src="/assets/image/PequeñoLogo.png" alt="Logo de Meriandes">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h3>SOBRE NOSOTROS</h3>
+                <p>En Meriandes, nuestra misión es proporcionar comidas nutritivas y equilibradas a los estudiantes de las escuelas de Caracas</p>
+                <p>Creemos que una buena alimentación es esencial para el desarrollo físico y mental de los niños y niñas, y estamos comprometidos a garantizar que cada estudiante tenga acceso a alimentos de calidad. </p>
+            </div>
+            <div class="box">
+                <h3>SIGUENOS</h3>
+                <div class="red-social">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2024 <b>Meriandes</b> - Las mejores comidas</small>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/components/alertas/mensajeAgregado/agregadoProveedor.js"></script>
+
+          <script src="/components/boton/botonDeAgregarProveedor.js"></script>
+
+      <script> agregarEnBaseDeDatos();</script>
+
+
+</body>
+</html>

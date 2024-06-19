@@ -1,0 +1,39 @@
+/* Header */
+header {
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.09);
+    margin-bottom: 10px;
+    font-size: larger;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 4px 60px 4px 10px;
+}
+
+#logo {
+    height: 40px;
+    margin: 10px;
+}
+
+header nav div {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+header nav img {
+    height: 25px;
+}
+
+#cuenta-carrito {
+    position: absolute;
+    background-color: var(--color-acento);
+    border-radius: 100%;
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    aspect-ratio: 1;
+    text-align: center;
+    /* margin-bottom: 15px; */
+}
