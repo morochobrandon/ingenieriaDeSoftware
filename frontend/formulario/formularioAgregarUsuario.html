@@ -16,7 +16,7 @@
 </head>
 <body>
 	<header>
-        <div class="logo">	<a href="/admin"><img src="/assets/image/DiminutoLogo.png" alt="Logo" id="logo"></a></div>
+        <div class="logo">	<a href="/admin"><img src="/image/DiminutoLogo.png" alt="Logo" id="logo"></a></div>
         <input type="checkbox" id="nav_check" hidden>
         <nav>
             <ul>
@@ -27,13 +27,13 @@
                     <a href="">Ventas</a>
                 </li>
                 <li>
-                    <a href="/pages/formulario/formularioAgregarProveedor.html">Proveedor</a>
+                    <a href="">Proveedor</a>
                 </li>
                 <li>
-                    <a href="/pages/formulario/formularioAgregarMateriaPrima.html">Materia Prima</a>
+                    <a href="">Materia Prima</a>
                 </li>
                 <li>
-                    <a href="/paginaWeb">Cerrar Sesión</a>
+                    <a href="">Cerrar Sesión</a>
                 </li>
             </ul>
         </nav>
@@ -48,7 +48,7 @@
 	<main>
           <div class="container">
         <h2>Registrar Uusario</h2>
-       <form id="form-first" action="http://localhost:3000/api/v1/persons" method="POST">
+       <form id="form-first" method="POST">
             <div>
                 <div class="details personal">
                     <span class="title">Detalles del Usuario</span>
@@ -84,7 +84,7 @@
             <div class="box">
                 <figure>
                     <a href="#">
-                        <img src="/assets/image/PequeñoLogo.png" alt="Logo de Meriandes">
+                        <img src="/image/PequeñoLogo.png" alt="Logo de Meriandes">
                     </a>
                 </figure>
             </div>
@@ -110,7 +110,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-     <script src="/components/boton/botonDeAgregarUsuario.js"></script>
+     <script src="/boton/botonDeAgregarUsuario.js"></script>
 
       <script> agregarEnBaseDeDatos();</script>
         

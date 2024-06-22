@@ -2,21 +2,17 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-	<link rel="stylesheet" href="/UI/footer/FooterGeneral.css">
+	<link rel="stylesheet" href="/footer/FooterGeneral.css">
 	<link rel="stylesheet" href="/sections/formularioBase.css">
-    <link rel="stylesheet" href="/UI/Header/headerGeneral.css">
+    <link rel="stylesheet" href="/Header/headerGeneral.css">
 
-      <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-	<script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
-	<title>Datos clientes</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-</head>
+   	<title>Datos clientes</title>
+  </head>
 <body>
 	<header>
-        <div class="logo">	<a href="/admin"><img src="/assets/image/DiminutoLogo.png" alt="Logo" id="logo"></a></div>
+        <div class="logo">	<a href="/admin"><img src="/image/DiminutoLogo.png" alt="Logo" id="logo"></a></div>
         <input type="checkbox" id="nav_check" hidden>
         <nav>
             <ul>
@@ -27,28 +23,23 @@
                     <a href="">Ventas</a>
                 </li>
                 <li>
-                    <a href="/pages/formulario/formularioAgregarProveedor.html">Proveedor</a>
+                    <a href="">Proveedor</a>
                 </li>
                 <li>
-                    <a href="/pages/formulario/formularioAgregarMateriaPrima.html">Materia Prima</a>
+                    <a href="">Materia Prima</a>
                 </li>
                 <li>
-                    <a href="/paginaWeb">Cerrar Sesión</a>
+                    <a href="">Cerrar Sesión</a>
                 </li>
             </ul>
         </nav>
-        <label for="nav_check" class="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </label>
     </header>
 
 
 	<main>
           <div class="container">
         <h2>Registrar Proveedor</h2>
-          <form id="form-first" action="http://localhost:3000/api/v1/suppliers" method="POST">
+          <form id="form-first">
             <div>
                 <div class="details personal">
                     <span class="title">Detalles del proveedor</span>
@@ -69,9 +60,14 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="boton-grande">
-                    <span class="button-container">Agregar</span>
-                </button>
+                        <div class="custom-popover">
+                          <button type="submit" class="boton-grande" id="btn-agregar">
+                            <span class="button-container">Agregar</span>
+                          </button>
+                          <div class="popover-content" id="mensaje-exito" style="display: none;">
+                            Cliente agregado con éxito
+                          </div>
+                        </div>
             </div> 
         </form>
     </div>
@@ -81,7 +77,7 @@
             <div class="box">
                 <figure>
                     <a href="#">
-                        <img src="/assets/image/PequeñoLogo.png" alt="Logo de Meriandes">
+                        <img src="/image/PequeñoLogo.png" alt="Logo de Meriandes">
                     </a>
                 </figure>
             </div>
@@ -104,14 +100,8 @@
             <small>&copy; 2024 <b>Meriandes</b> - Las mejores comidas</small>
         </div>
     </footer>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="/components/alertas/mensajeAgregado/agregadoProveedor.js"></script>
-
-          <script src="/components/boton/botonDeAgregarProveedor.js"></script>
-
-      <script> agregarEnBaseDeDatos();</script>
+        <script src="/boton/botonDeAgregarProveedor.js"></script>
+        <script> agregarEnBaseDeDatos();</script>
 
 
 </body>

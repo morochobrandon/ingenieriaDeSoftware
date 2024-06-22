@@ -34,7 +34,7 @@ app.use(cors());
 
 //middleware
 const storage = multer.diskStorage({
-  destination: path.join(rutaFrontend, "/assets/image/productosVentas"),
+  destination: path.join(rutaFrontend, "/productosVentas"),
   filename(req,file,cb){
     //req = informacion de peticion del usuario
     // file= informacion del archivos que me da el usuario
@@ -50,49 +50,49 @@ app.use(express.json());
 //app.use(require('./routes/clientesFronted'));
 
 app.get("/manager/agregar/cliente", (req, res) =>
-  res.sendFile(rutaFrontend + "/pages/formulario/formularioAgregarCliente.html")
+  res.sendFile(rutaFrontend + "/formulario/formularioAgregarCliente.html")
 );
 
 app.get("/carrito/compra/cliente", (req, res) =>
-  res.sendFile(rutaFrontend + "/pages/manager/carritoDeCompra.html")
+  res.sendFile(rutaFrontend + "/manager/carritoDeCompra.html")
 );
 
 app.get("/catalogo", (req, res) =>
-  res.sendFile(rutaFrontend + "/pages/manager/catalogo.html")
+  res.sendFile(rutaFrontend + "/manager/catalogo.html")
 );
 
 app.get("/manager/agregar/empleado", (req, res) =>
-  res.sendFile(rutaFrontend + "/pages/formulario/formularioAgregarEmpleado.html")
+  res.sendFile(rutaFrontend + "/formulario/formularioAgregarEmpleado.html")
 );
 
 app.get("/manager/agregar/materia/prima", (req, res) =>
-  res.sendFile(rutaFrontend + "/pages/formulario/formularioAgregarMateriaPrima.html")
+  res.sendFile(rutaFrontend + "/formulario/formularioAgregarMateriaPrima.html")
 );
 
 app.get("/manager/agregar/productos/ventas", (req, res) =>
-  res.sendFile(rutaFrontend + "/pages/formulario/formularioAgregarProductoVenta.html")
+  res.sendFile(rutaFrontend + "/formulario/formularioAgregarProductoVenta.html")
 );
 
 app.get("/manager/agregar/proveedor", (req, res) =>
-  res.sendFile(rutaFrontend + "/pages/formulario/formularioAgregarProveedor.html")
+  res.sendFile(rutaFrontend + "/formulario/formularioAgregarProveedor.html")
 );
 
 app.get("/manager/consultar/cliente", (req, res) =>
   res.sendFile(
-    rutaFrontend + "/pages/manager/consultarCliente.html"
+    rutaFrontend + "/manager/consultarCliente.html"
   )
 );
 
 app.get("/manager/consultar/proveedor", (req, res) =>
-  res.sendFile(rutaFrontend + "/pages/manager/consultarProveedor.html")
+  res.sendFile(rutaFrontend + "/manager/consultarProveedor.html")
 );
 
 app.get("/manager/consultar/materia/prima", (req, res) =>
-  res.sendFile(rutaFrontend + "/pages/manager/consultarMateriaPrima.html")
+  res.sendFile(rutaFrontend + "/manager/consultarMateriaPrima.html")
 );
 
 app.get("/manager/agregar/materia/prima", (req, res) =>
-  res.sendFile(rutaFrontend + "/pages/formulario/formularioMateriaPrima.html")
+  res.sendFile(rutaFrontend + "/formulario/formularioMateriaPrima.html")
 );
 
 // Supongamos que tienes un modelo llamado "Client"

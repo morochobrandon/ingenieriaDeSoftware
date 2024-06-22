@@ -58,6 +58,21 @@ function agregarEnBaseDeDatos() {
         if (res.ok) {
           const resJson = await res.json();
           console.log("materia prima guardado:", resJson);
+
+          // Borra los valores de los campos del formulario
+                 e.target.elements.nombre.value= "";;
+                 e.target.elements.precio_unitario.value= "";;
+                 e.target.elements.precio_total.value= "";;
+                 e.target.elements.cantidad.value= "";;
+                 e.target.elements.id_proveedor.value= "";;
+
+          // Después de borrar los valores de los campos y confirmar que el cliente se ha guardado
+          document.getElementById("mensaje-exito").style.display = "block";
+
+          // Oculta el mensaje después de 5 segundos
+          setTimeout(function () {
+            document.getElementById("mensaje-exito").style.display = "none";
+          }, 5000); // 5000 milisegundos = 5 segundos
         } else {
           const errorText = await res.text(); // Obtén el mensaje de error del servidor
           console.error("Error al guardar la materia prima:", res.status, errorText);

@@ -35,6 +35,19 @@ function agregarEnBaseDeDatos() {
         if (res.ok) {
           const resJson = await res.json();
           console.log("Proveedor guardado:", resJson);
+
+          // Vaciar   los valores de los campos del formulario
+            e.target.elements.nombre.value="";
+            e.target.elements.nro_telefono.value="";
+            e.target.elements.nro_factura.value="";
+
+          // Después de borrar los valores de los campos y confirmar que el cliente se ha guardado
+          document.getElementById("mensaje-exito").style.display = "block";
+
+          // Oculta el mensaje después de 5 segundos
+          setTimeout(function () {
+            document.getElementById("mensaje-exito").style.display = "none";
+          }, 5000); // 5000 milisegundos = 5 segundos
         } else {
           const errorText = await res.text(); // Obtén el mensaje de error del servidor
           console.error("Error al guardar el proveedor:", res.status, errorText);

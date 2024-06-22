@@ -31,6 +31,20 @@ function agregarEnBaseDeDatos() {
         if (res.ok) {
           const resJson = await res.json();
           console.log("Producto a vender guardado:", resJson);
+
+          // Vacía los valores de los campos del formulario
+          e.target.elements.nombre.value = "";
+          e.target.elements.precio.value = "";
+          e.target.elements.tipo.value = "";
+          document.getElementById("fotoProductoVenta").value = ""; // Limpia el campo de carga de imagen
+
+          // Después de borrar los valores de los campos y confirmar que el cliente se ha guardado
+          document.getElementById("mensaje-exito").style.display = "block";
+
+          // Oculta el mensaje después de 5 segundos
+          setTimeout(function () {
+            document.getElementById("mensaje-exito").style.display = "none";
+          }, 5000); // 5000 milisegundos = 5 segundos
         } else {
           const errorText = await res.text(); // Obtén el mensaje de error del servidor
           console.error(
