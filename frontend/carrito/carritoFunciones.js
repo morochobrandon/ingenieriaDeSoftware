@@ -62,7 +62,9 @@ function getNuevoProductoParaMemoria(producto) {
 function actualizarNumeroCarrito() {
   let cuenta = 0;
   const memoria = JSON.parse(localStorage.getItem("Productos"));
+  
   if (memoria && memoria.length > 0) {
+    console.log(memoria);
     cuenta = memoria.reduce((acum, current) => acum + current.cantidad, 0);
     return (cuentaCarritoElement.innerText = cuenta);
   }

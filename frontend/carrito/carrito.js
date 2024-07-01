@@ -13,7 +13,7 @@ function crearTarjetasProductosCarrito() {
       const nuevoProducto = document.createElement("div");
       nuevoProducto.classList = "tarjeta-producto";
       nuevoProducto.innerHTML = `
-    <img src="/assets/image/productosVentas/${producto.imagen}" alt="Producto 1">
+    <img src="/productosVentas/${producto.imagen}" alt="Producto 1">
     
     <div>
     <button class="boton-grande">-</button>
@@ -79,6 +79,20 @@ document.getElementById("reiniciar").addEventListener("click", () => {
 /** Muestra o esconde el mensaje de que no hay nada en el carrito */
 function revisarMensajeVacio() {
   const productos = JSON.parse(localStorage.getItem("Productos"));
-  carritoVacioElement.classList.toggle("escondido", productos);
-  totalesContainer.classList.toggle("escondido", !productos);
+  const carritoVacioElement = document.getElementById("carrito-vacio");
+  const totalesContainer = document.getElementById("totales");
+
+  if (productos && productos.length > 0) {
+    // Hay productos en el carrito
+    carritoVacioElement.style.display = "none";
+    totalesContainer.style.display = "block";
+  } else {
+    // El carrito está vacío
+    carritoVacioElement.style.display = "block";
+    totalesContainer.style.display = "none";
+  }
 }
+
+// Llama a esta función en el lugar apropiado de tu código
+revisarMensajeVacio();
+

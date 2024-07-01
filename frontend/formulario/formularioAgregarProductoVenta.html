@@ -6,18 +6,18 @@
 	
 	<link rel="stylesheet" href="/footer/FooterGeneral.css">
 	<link rel="stylesheet" href="/sections/formularioBase.css">
-    <link rel="stylesheet" href="/Header/headerGeneral.css">
+    <link rel="stylesheet" href="/header/headerGeneral.css">
 
-   <title>Datos clientes</title>
+   <title>Datos Productos </title>
  </head>
 <body>
 	<header>
-        <div class="logo">	<a href="/admin"><img src="/image/DiminutoLogo.png" alt="Logo" id="logo"></a></div>
+        <div class="logo">	<a href=""><img src="/image/DiminutoLogo.png" alt="Logo" id="logo"></a></div>
         <input type="checkbox" id="nav_check" hidden>
         <nav>
             <ul>
-              <li>
-                    <a href="/manager/agregar/cliente">Préstamos</a>
+                <li>
+                    <a href="">Préstamos</a>
                 </li>
                 <li>
                     <a href="">Ventas</a>
@@ -40,7 +40,6 @@
         </label>
     </header>
 
-
 	<main>
           <div class="container">
         <h2>Registrar Producto Ventas</h2>
@@ -49,6 +48,11 @@
                 <div class="details personal">
                     <span class="title">Detalles de productos</span>
                     <div class="fields">
+
+                        <div hidden>
+                            <label>ID</label>
+                            <input type="text" name="id" id="id" placeholder="cosas para hacer a futuro" readonly>
+                        </div>
                         <div class="input-box">
                             <label>Nombre</label>
                             <input type="text" name="nombre" placeholder="Introduce el nombre del producto" required>
@@ -61,7 +65,7 @@
                             <label>Tipo</label>
                             <input type="text" name="tipo" placeholder="Introduce el tipo" required>
                         </div>
-                        <div class="input-box">
+                        <div>
                             <label>foto</label>
                             <input type="file" id="fotoProductoVenta" required>
                         </div>
@@ -72,7 +76,7 @@
                             <span class="button-container">Agregar</span>
                           </button>
                           <div class="popover-content" id="mensaje-exito" style="display: none;">
-                            Cliente agregado con éxito
+                            Producto agregado con éxito
                           </div>
                         </div>
                 </div> 

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" href="/footer/FooterGeneral.css">
+	<link rel="stylesheet" href="/sections/formularioBase.css">
+    <link rel="stylesheet" href="/header/headerGeneral.css">
+
+  
+	<title>Datos credito clientes</title>
+ </head>
+<body>
+
+	<header>
+        <div class="logo">	<a href=""><img src="/image/DiminutoLogo.png" alt="Logo" id="logo"></a></div>
+        <input type="checkbox" id="nav_check" hidden>
+        <nav>
+            <ul>
+                <li>
+                    <a href="">Préstamos</a>
+                </li>
+                <li>
+                    <a href="">Ventas</a>
+                </li>
+                <li>
+                    <a href="">Proveedor</a>
+                </li>
+                <li>
+                    <a href="">Materia Prima</a>
+                </li>
+                <li>
+                    <a href="">Cerrar Sesión</a>
+                </li>
+            </ul>
+        </nav>
+        <label for="nav_check" class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+    </header>
+
+	<main>
+          <div class="container">
+        <h2>Modificar Credito Cliente</h2>
+        <form id="form-first">
+            <div>
+                <div class="details personal">
+                    <span class="title">Detalles de los productos fiados</span>
+                    <div class="fields">
+                        <div hidden>
+                            <label>ID</label>
+                            <input type="text" name="id" id="id" placeholder="cosas para hacer a futuro" readonly>
+                        </div>
+                        <div class="input-box">
+                            <label>Nombre del prestamo</label>
+                            <input type="text" name="nombre" id="nombre" placeholder="Introduce el nombre del prestamo" required>
+                        </div>
+                        <div class="input-box">
+                            <label>Precio del prestamo</label>
+                            <input type="text" name="precio" id="precio" placeholder="Introduce el precio" required>
+                        </div>
+                        <div class="input-box">
+                            <label>Tipo del prestamo</label>
+                            <input type="text" name="tipo" id="tipo" placeholder="Introduce el tipo" required>
+                        </div>
+                        <div class="input-box">
+                            <label>ID del cliente</label>
+                            <input type="text" name="id_cliente" id="id_cliente" placeholder="Introduce el id del cliente" required>
+                        </div>
+                    </div>
+                        <div class="custom-popover">
+                          <button type="submit" class="boton-grande" id="btn-agregar">
+                            <span class="button-container">Confirmar cambios</span>
+                          </button>
+                          <div class="popover-content" id="mensaje-exito" style="display: none;">
+                            Credito cliente modificado con éxito
+                          </div>
+                        </div>
+                </div>
+            </div>
+        </form>
+    </div>
+	</main>
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#">
+                        <img src="/image/PequeñoLogo.png" alt="Logo de Meriandes">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h3>SOBRE NOSOTROS</h3>
+                <p>En Meriandes, nuestra misión es proporcionar comidas nutritivas y equilibradas a los estudiantes de las escuelas de Caracas</p>
+                <p>Creemos que una buena alimentación es esencial para el desarrollo físico y mental de los niños y niñas, y estamos comprometidos a garantizar que cada estudiante tenga acceso a alimentos de calidad. </p>
+            </div>
+            <div class="box">
+                <h3>SIGUENOS</h3>
+                <div class="red-social">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2024 <b>Meriandes</b> - Las mejores comidas</small>
+        </div>
+    </footer>
+      <script src="/boton/botonDeConfirmarModificarCreditoCliente.js"></script>
+        <script> agregarEnBaseDeDatos();</script>
+    </body>
+      <script src="/enviarInformacion/mandarCreditoClienteSeleccionadoDeTablaAFormulario.js"></script>
+  
+</html>

@@ -4,8 +4,6 @@ const cors = require("cors");
 const path = require("path");
 const multer = require("multer");
 
-const { Client } = require("./db/models/clients.model"); 
-
 dotenv.config();
 const app = express();
 
@@ -15,14 +13,6 @@ const port = process.env.PORT || 3000;
 
 const routerApi = require("./routes");
 const { Product } = require("./db/models/products.model");
-const { Supplier } = require("./db/models/suppliers.model");
-const { RawMaterial } = require("./db/models/rawMaterials.model");
-const { Worker } = require("./db/models/workers");
-
-//Server
-app.listen(port, () => {
-  console.log("Port ==>", port);
-});
 
 //Configuración
 app.use(express.static(rutaFrontend));
@@ -30,177 +20,432 @@ console.log(rutaFrontend);
 
 app.use(cors());
 
-
-
 //middleware
 const storage = multer.diskStorage({
   destination: path.join(rutaFrontend, "/productosVentas"),
-  filename(req,file,cb){
+  filename(req, file, cb) {
     //req = informacion de peticion del usuario
     // file= informacion del archivos que me da el usuario
     // cb = que hace despues de hacer todo lo que tengo que hacar
     cb(null, new Date().getTime() + path.extname(file.originalname));
-  }
+  },
 });
 app.use(multer({ storage }).single("image"));
-app.use(express.urlencoded({extended:false}));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-//Rutas
-//app.use(require('./routes/clientesFronted'));
 
-app.get("/manager/agregar/cliente", (req, res) =>
-  res.sendFile(rutaFrontend + "/formulario/formularioAgregarCliente.html")
+const baseRoutesFrontend = {
+  agregarCliente: "/agregar/cliente", ////////////////////////////////
+  agregarProductoVenta: "/agregar/productoVenta", ////////////////////
+  agregarProveedor: "/agregar/proveedor", ////////////////////////////
+  agregarProductoMateriaPrima: "/agregar/productoMateriaPrima", //////
+  agregarEmpleado: "/agregar/empleado", //////////////////////////////
+  agregarVenta: "/agregar/venta", //////////////////////////////////
+
+  carritoCompra: "/carrito/compra/cliente", //////////////////////////
+  catalogo: "/catalogo", /////////////////////////////////////////////
+  elegirClienteQueSeLeFia: "/elegirClienteQueSeLeFia", ///////////////
+
+  //tablas
+  consultarCliente: "/consultar/cliente", ////////////////////////////
+  consultarProductoVenta: "/consultar/productoVenta",
+  consultarProveedor: "/consultar/proveedor", ////////////////////////
+  consultarProductoMateriaPrima: "/consultar/productoMateriaPrima", //
+  consultarEmpleado: "/consultar/empleado", //////////////////////////
+  consultarCreditoCliente: "/consultar/credito/cliente",
+  consultarVenta: "/consultar/venta", ////////////////////////////////
+
+  modificarCliente: "/modificar/cliente",
+  modificarProductoVenta: "/modificar/productoVenta",
+  modificarProveedor: "/modificar/proveedor", ////////////////////////
+  modificarProductoMateriaPrima: "/modificar/productoMateriaPrima", //
+  modificarEmpleado: "/modificar/empleado", //////////////////////////
+  modificarCreditoCliente: "/modificar/credito/cliente",
+  modificarVenta: "/modificar/venta", ////////////////////////////////
+
+  eliminarCliente: "/eliminar/cliente", //////////////////////////////
+  eliminarProductoVenta: "/eliminar/productoVenta",
+  eliminarProveedor: "/eliminar/proveedor", //////////////////////////
+  eliminarProductoMateriaPrima: "/eliminar/productoMateriaPrima", ////
+  eliminarEmpleado: "/eliminar/empleado", ////////////////////////////
+  eliminarCreditoCliente: "/eliminar/credito/cliente", /////////////
+
+  elegirClienteConsultarCredito: "/elegir/cliente/consultar/credito",
+  elegirClienteModificarCredito: "/elegir/cliente/modificar/credito",
+  elegirClienteEliminarCredito: "/elegir/cliente/eliminar/credito", //
+  //especifico
+  consultarClienteEspecifico: "/consultar/cliente/especifico", //
+  consultarProductoVentaEspecifico: "/consultar/productoVenta/especifico", //
+  consultarProveedorEspecifico: "/consultar/proveedor/especifico", //
+  consultarProductoMateriaPrimaEspecifico:
+    "/consultar/productoMateriaPrima/especifico", //
+  consultarEmpleadoEspecifico: "/consultar/empleado/especifico",
+  consultarCreditoClienteEspecifico: "/consultar/credito/cliente/especifico",
+  consultarVentaEspecifico: "/consultar/venta/especifico", //
+
+  modificarClienteEspecifico: "/modificar/cliente/especifico",
+  modificarProductoVentaEspecifico: "/modificar/productoVenta/especifico",
+  modificarProveedorEspecifico: "/modificar/proveedor/especifico", //
+  modificarProductoMateriaPrimaEspecifico:
+    "/modificar/productoMateriaPrima/especifico", //
+  modificarEmpleadoEspecifico: "/modificar/empleado/especifico", //
+  modificarCreditoClienteEspecifico: "/modificar/credito/cliente/especifico",
+  modificarVentaEspecifico: "/modificar/venta/especifico", //
+};
+
+
+
+
+
+
+
+
+
+
+//gestion de prestamos
+
+
+// ----- agregar credito cliente  -------
+
+app.get(baseRoutesFrontend.elegirClienteQueSeLeFia, (req, res) =>
+  res.sendFile(rutaFrontend + "/carrito/elegirClienteQueSeLeFia.html")
 );
 
-app.get("/carrito/compra/cliente", (req, res) =>
-  res.sendFile(rutaFrontend + "/manager/carritoDeCompra.html")
+app.get(baseRoutesFrontend.catalogo, (req, res) =>
+  res.sendFile(rutaFrontend + "/carrito/catalogo.html")
 );
 
-app.get("/catalogo", (req, res) =>
-  res.sendFile(rutaFrontend + "/manager/catalogo.html")
+app.get(baseRoutesFrontend.carritoCompra, (req, res) =>
+  res.sendFile(rutaFrontend + "/carrito/carritoDeCompra.html")
 );
 
-app.get("/manager/agregar/empleado", (req, res) =>
-  res.sendFile(rutaFrontend + "/formulario/formularioAgregarEmpleado.html")
+
+
+
+// ------- consultar credito cliente ---------
+app.get(baseRoutesFrontend.elegirClienteConsultarCredito, (req, res) =>
+  res.sendFile(rutaFrontend + "/consultar/elegirClienteParaConsultarCreditoEnTabla.html")
 );
 
-app.get("/manager/agregar/materia/prima", (req, res) =>
-  res.sendFile(rutaFrontend + "/formulario/formularioAgregarMateriaPrima.html")
+app.get(baseRoutesFrontend.consultarCreditoCliente, (req, res) =>
+  res.sendFile(rutaFrontend + "/consultar/consultarCreditoClienteEnTabla.html")
 );
 
-app.get("/manager/agregar/productos/ventas", (req, res) =>
-  res.sendFile(rutaFrontend + "/formulario/formularioAgregarProductoVenta.html")
+app.get(baseRoutesFrontend.consultarCreditoClienteEspecifico, (req, res) =>
+  res.sendFile(rutaFrontend + "/formulario/formularioConsultarCreditoCliente.html")
 );
 
-app.get("/manager/agregar/proveedor", (req, res) =>
-  res.sendFile(rutaFrontend + "/formulario/formularioAgregarProveedor.html")
-);
 
-app.get("/manager/consultar/cliente", (req, res) =>
+// -------- modificar credito cliente ---------
+
+app.get(baseRoutesFrontend.elegirClienteModificarCredito, (req, res) =>
   res.sendFile(
-    rutaFrontend + "/manager/consultarCliente.html"
+    rutaFrontend + "/modificar/elegirClienteParaModificarCreditoEnTabla.html"
   )
 );
 
-app.get("/manager/consultar/proveedor", (req, res) =>
-  res.sendFile(rutaFrontend + "/manager/consultarProveedor.html")
+app.get(baseRoutesFrontend.modificarCreditoCliente, (req, res) =>
+  res.sendFile(rutaFrontend + "/modificar/modificarCreditoClienteEnTabla.html")
 );
 
-app.get("/manager/consultar/materia/prima", (req, res) =>
-  res.sendFile(rutaFrontend + "/manager/consultarMateriaPrima.html")
+app.get(baseRoutesFrontend.modificarCreditoClienteEspecifico, (req, res) =>
+  res.sendFile(
+    rutaFrontend + "/formulario/formularioModificarCreditoCliente.html"
+  )
 );
 
-app.get("/manager/agregar/materia/prima", (req, res) =>
-  res.sendFile(rutaFrontend + "/formulario/formularioMateriaPrima.html")
+
+// -------- eliminar credito cliente -----------
+
+app.get(baseRoutesFrontend.elegirClienteEliminarCredito, (req, res) =>
+  res.sendFile(rutaFrontend + "/eliminar/elegirClienteParaEliminarCreditoEnTabla.html")
 );
 
-// Supongamos que tienes un modelo llamado "Client"
-app.get("/api/v1/clients/:id", async (req, res) => {
-  try {
-    const { id } = req.params; // Obtiene el ID del cliente de los parámetros de la URL
-
-    // Busca el cliente por su ID
-    const cliente = await Client.findByPk(id);
-
-    if (!cliente) {
-      return res.status(404).json({ error: "Cliente no encontrado" });
-    }
-
-    res.status(200).json({ success: true, data: cliente });
-  } catch (error) {
-    console.error("Error al obtener cliente:", error);
-    res.status(500).json({ error: "Error interno del servidor" });
-  }
-});
+app.get(baseRoutesFrontend.eliminarCreditoCliente, (req, res) =>
+  res.sendFile(rutaFrontend + "/eliminar/eliminarCreditoClienteEnTabla.html")
+);
 
 
-app.post("/api/v1/clients", async (req, res) => {
-  try {
-    
-    
-    const {
-      nombre,
-      apellido,
-      segundo_nombre,
-      segundo_apellido,
-      cedula,
-      deuda_acomulada,
-    } = req.body;
-    console.log("Datos recibidos:", req.body);
-    console.log(req.body);
-    
-    // Crea un nuevo cliente en la base de datos
-    const nuevoCliente = await Client.create({
-      nombre,
-      apellido,
-      segundo_nombre,
-      segundo_apellido,
-      cedula,
-      deuda_acomulada,
-    });
-    console.log(nuevoCliente);
-    res.status(200).json({ test: true });
-  } catch (error) {
-    console.error("Error al agregar cliente:", error);
-    res.status(500).json({ error: "Error interno del servidor" });
-  }
-});
 
-// this.URI = "http://localhost:3000/api/v1/products";
-/*
-app.post("/api/v1/products", async (req, res) => {
-  try {
-    const {
-      nombre,
-      precio,
-      tipo,
-      fotoProductoVenta,
-    } = req.body;
-    console.log("Datos recibidos:", req.body);
-    console.log(req.body);
 
-    // Crea un nuevo cliente en la base de datos
-    const nuevoProducto = await Product.create({
-      nombre,
-      precio,
-      tipo,
-    });
-    console.log(nuevoProducto);
-    res.status(200).json({ test: true });
-  } catch (error) {
-    console.error("Error al agregar producto venta:", error);
-    res.status(500).json({ error: "Error interno del servidor" });
-  }
-});
-*/
-/*
+
+//gestion de ventas
+
+// ----- agregar venta de producto  -------
+app.get(baseRoutesFrontend.agregarProductoVenta, (req, res) =>
+  res.sendFile(rutaFrontend + "/formulario/formularioAgregarProductoVenta.html")
+);
+
+// ----- generar reporte del dia -------
+
+app.get(baseRoutesFrontend.agregarVenta, (req, res) =>
+  res.sendFile(rutaFrontend + "/formulario/formularioAgregarVenta.html")
+);
+
+// ----- consultar reporte  -------
+
+app.get(baseRoutesFrontend.consultarVenta, (req, res) =>
+  res.sendFile(rutaFrontend + "/consultar/consultarVentaEnTabla.html")
+);
+
+app.get(baseRoutesFrontend.consultarVentaEspecifico, (req, res) =>
+  res.sendFile(rutaFrontend + "/formulario/formularioConsultarVenta.html")
+);
+
+// ----- modificar reporte  -------
+
+app.get(baseRoutesFrontend.modificarVenta, (req, res) =>
+  res.sendFile(rutaFrontend + "/modificar/modificarVentaEnTabla.html")
+);
+
+app.get(baseRoutesFrontend.modificarVentaEspecifico, (req, res) =>
+  res.sendFile(rutaFrontend + "/formulario/formularioModificarVenta.html")
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//gestion de proveedores
+
+// ----- agregar proveedor  -------
+
+app.get(baseRoutesFrontend.agregarProveedor, (req, res) =>
+  res.sendFile(rutaFrontend + "/formulario/formularioAgregarProveedor.html")
+);
+
+// ----- consultar proveedor  -------
+
+//tabla
+app.get(baseRoutesFrontend.consultarProveedor, (req, res) =>
+  res.sendFile(rutaFrontend + "/consultar/consultarProveedorEnTabla.html")
+);
+
+//especifico
+
+app.get(baseRoutesFrontend.consultarProveedorEspecifico, (req, res) =>
+  res.sendFile(rutaFrontend + "/formulario/formularioConsultarProveedor.html")
+);
+
+// ----- modificar proveedor  -------
+
+//tabla
+app.get(baseRoutesFrontend.modificarProveedor, (req, res) =>
+  res.sendFile(rutaFrontend + "/modificar/modificarProveedorEnTabla.html")
+);
+
+//especifico
+app.get(baseRoutesFrontend.modificarProveedorEspecifico, (req, res) =>
+  res.sendFile(rutaFrontend + "/formulario/formularioModificarProveedor.html")
+);
+
+// ----- eliminar proveedor  -------
+app.get(baseRoutesFrontend.eliminarProveedor, (req, res) =>
+  res.sendFile(rutaFrontend + "/eliminar/eliminarProveedorEnTabla.html")
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// gestion de materia prima
+
+// ----- agregar materia prima  -------
+
+app.get(baseRoutesFrontend.agregarProductoMateriaPrima, (req, res) =>
+  res.sendFile(rutaFrontend + "/formulario/formularioAgregarMateriaPrima.html")
+);
+
+// ----- consultar materia prima  -------
+
+//tabla
+app.get(baseRoutesFrontend.consultarProductoMateriaPrima, (req, res) =>
+  res.sendFile(rutaFrontend + "/consultar/consultarMateriaPrimaEnTabla.html")
+);
+
+//especifico
+
+app.get(
+  baseRoutesFrontend.consultarProductoMateriaPrimaEspecifico,
+  (req, res) =>
+    res.sendFile(
+      rutaFrontend + "/formulario/formularioConsultarMateriaPrima.html"
+    )
+);
+
+// ----- modificar materia prima  -------
+
+//tabla
+app.get(baseRoutesFrontend.modificarProductoMateriaPrima, (req, res) =>
+  res.sendFile(rutaFrontend + "/modificar/modificarMateriaPrimaEnTabla.html")
+);
+
+//especifico
+
+app.get(
+  baseRoutesFrontend.modificarProductoMateriaPrimaEspecifico,
+  (req, res) =>
+    res.sendFile(
+      rutaFrontend + "/formulario/formularioModificarMateriaPrima.html"
+    )
+);
+
+// ----- eliminar materia prima  -------
+
+app.get(baseRoutesFrontend.eliminarProductoMateriaPrima, (req, res) =>
+  res.sendFile(rutaFrontend + "/eliminar/eliminarMateriaPrimaEnTabla.html")
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// gestion de nomina
+
+
+// ----- agregar empleado  -------
+
+app.get(baseRoutesFrontend.agregarEmpleado, (req, res) =>
+  res.sendFile(rutaFrontend + "/formulario/formularioAgregarEmpleado.html")
+);
+
+
+// ----- consultar empleado  -------
+
+
+//tabla
+app.get(baseRoutesFrontend.consultarEmpleado, (req, res) =>
+  res.sendFile(rutaFrontend + "/consultar/consultarEmpleadoEnTabla.html")
+);
+
+//especifico
+app.get(baseRoutesFrontend.consultarEmpleadoEspecifico, (req, res) =>
+  res.sendFile(rutaFrontend + "/formulario/formularioConsultarEmpleado.html")
+);
+
+// ----- modificar empleado  -------
+
+//tabla
+app.get(baseRoutesFrontend.modificarEmpleado, (req, res) =>
+  res.sendFile(rutaFrontend + "/modificar/modificarEmpleadoEnTabla.html")
+);
+//especifico
+app.get(baseRoutesFrontend.modificarEmpleadoEspecifico, (req, res) =>
+  res.sendFile(rutaFrontend + "/formulario/formularioModificarEmpleado.html")
+);
+
+
+// ----- eliminar empleado  -------
+
+//tabla
+app.get(baseRoutesFrontend.eliminarEmpleado, (req, res) =>
+  res.sendFile(rutaFrontend + "/eliminar/eliminarEmpleadoEnTabla.html")
+);
+
+
+
+
+
+//-------------------------------------------------------------
+
+
+
+
+//gestion de clientes
+
+// ----- agregar cliente  -------
+
+app.get(baseRoutesFrontend.agregarCliente, (req, res) =>
+  res.sendFile(rutaFrontend + "/formulario/formularioAgregarCliente.html")
+);
+
+
+// ----- consultar cliente  -------
+
+//tabla
+
+app.get(baseRoutesFrontend.consultarCliente, (req, res) =>
+  res.sendFile(rutaFrontend + "/consultar/consultarClienteEnTabla.html")
+);
+
+//especifico
+app.get(baseRoutesFrontend.consultarClienteEspecifico, (req, res) =>
+  res.sendFile(rutaFrontend + "/formulario/formularioConsultarCliente.html")
+);
+
+
+// ----- modificar cliente  -------
+
+//tabla
+
+app.get(baseRoutesFrontend.modificarCliente, (req, res) =>
+  res.sendFile(rutaFrontend + "/modificar/modificarClienteEnTabla.html")
+);
+
+//especifico
+app.get(baseRoutesFrontend.modificarClienteEspecifico, (req, res) =>
+  res.sendFile(rutaFrontend + "/formulario/formularioModificarCliente.html")
+);
+
+
+// ----- eliminar cliente  -------
+
+app.get(baseRoutesFrontend.eliminarCliente, (req, res) =>
+  res.sendFile(rutaFrontend + "/eliminar/eliminarClienteEnTabla.html") 
+);
+
+
+
+
+
+
+
+
+
+//Rutas
+
 app.post("/api/v1/products", async (req, res) => {
   try {
     const { nombre, precio, tipo } = req.body;
     const fotoProductoVenta = req.file; // multer coloca el archivo aquí
-
-    // Guarda la información del producto y la imagen en la base de datos
-    const nuevoProducto = await Product.create({
-      nombre,
-      precio,
-      tipo,
-      imagen: fotoProductoVenta.path, // Guarda la ruta de la imagen
-    });
-
-    res.status(200).json(nuevoProducto);
-  } catch (error) {
-    console.error("Error al agregar producto venta:", error);
-    res.status(500).json({ error: "Error interno del servidor" });
-  }
-});
-*/
-
-app.post("/api/v1/products", async (req, res) => {
-  try {
-    const { nombre, precio, tipo } = req.body;
-    const fotoProductoVenta = req.file; // multer coloca el archivo aquí
-
+    console.log('entro aqui')
     // Extrae el nombre del archivo de la ruta completa
     const nombreArchivo = path.basename(fotoProductoVenta.path);
 
@@ -219,144 +464,12 @@ app.post("/api/v1/products", async (req, res) => {
   }
 });
 
-app.post("/api/v1/suppliers", async (req, res) => {
-  try {
-    const { nombre, nro_telefono, nro_factura } = req.body;
-    console.log("Datos recibidos:", req.body);
-    console.log(req.body);
-
-    // Crea un nuevo cliente en la base de datos
-    const nuevoProveedor = await Supplier.create({
-      nombre,
-      nro_telefono,
-      nro_factura,
-    });
-    console.log(nuevoProveedor);
-    res.status(200).json({ test: true });
-  } catch (error) {
-    console.error("Error al agregar proveedor:", error);
-    res.status(500).json({ error: "Error interno del servidor" });
-  }
-});
-
-app.post("/api/v1/rawMaterials", async (req, res) => {
-  try {
-    const { nombre, precio_unitario, precio_total, cantidad, id_proveedor } =
-      req.body;
-    console.log("Datos recibidos:", req.body);
-    console.log(req.body);
-
-    // Crea un nuevo cliente en la base de datos
-    const nuevoProductoMateriaPrima = await RawMaterial.create({
-      nombre,
-      precio_unitario,
-      precio_total,
-      cantidad,
-      id_proveedor,
-    });
-    console.log(nuevoProductoMateriaPrima);
-    res.status(200).json({ test: true });
-  } catch (error) {
-    console.error("Error al agregar proveedor:", error);
-    res.status(500).json({ error: "Error interno del servidor" });
-  }
-});
-
-app.post("http://localhost:3000/api/v1/workers", async (req, res) => {
-  try {
-     const {
-       nombre,
-       apellido,
-       segundo_nombre,
-       segundo_apellido,
-       cedula,
-       cargo,
-       local_donde_trabaja,
-     } = req.body;
-    console.log("Datos recibidos:", req.body);
-    console.log(req.body);
-
-    // Crea un nuevo cliente en la base de datos
-    const nuevoEmpleado = await Worker.create({
-      nombre,
-      apellido,
-      segundo_nombre,
-      segundo_apellido,
-      cedula,
-      cargo,
-      local_donde_trabaja,
-    });
-    console.log(nuevoEmpleado);
-    res.status(200).json({ test: true });
-  } catch (error) {
-    console.error("Error al agregar empleado:", error);
-    res.status(500).json({ error: "Error interno del servidor" });
-  }
-});
-
-
-
-// Supongamos que tienes un modelo llamado "Client"
-app.put("/api/v1/clients/:id", async (req, res) => {
-  try {
-    const { id } = req.params; // Obtiene el ID del cliente de los parámetros de la URL
-    const {
-      nombre,
-      apellido,
-      segundo_nombre,
-      segundo_apellido,
-      cedula,
-      deuda_acomulada,
-    } = req.body;
-
-    // Busca el cliente por su ID
-    const clienteAModificar = await Client.findByPk(id);
-
-    if (!clienteAModificar) {
-      return res.status(404).json({ error: "Cliente no encontrado" });
-    }
-
-    // Actualiza los campos deseados
-    clienteAModificar.nombre = nombre;
-    clienteAModificar.apellido = apellido;
-    clienteAModificar.segundo_nombre = segundo_nombre;
-    clienteAModificar.segundo_apellido = segundo_apellido;
-    clienteAModificar.cedula = cedula;
-    clienteAModificar.deuda_acomulada = deuda_acomulada;
-
-    // Guarda los cambios en la base de datos
-    await clienteAModificar.save();
-
-    res.status(200).json({ success: true, data: clienteAModificar });
-  } catch (error) {
-    console.error("Error al modificar cliente:", error);
-    res.status(500).json({ error: "Error interno del servidor" });
-  }
-});
-
-// Supongamos que tienes un modelo llamado "Client"
-app.delete("/api/v1/clients/:id", async (req, res) => {
-  try {
-    const { id } = req.params; // Obtiene el ID del cliente de los parámetros de la URL
-
-    // Busca el cliente por su ID
-    const clienteAEliminar = await Client.findByPk(id);
-
-    if (!clienteAEliminar) {
-      return res.status(404).json({ error: "Cliente no encontrado" });
-    }
-
-    // Elimina el registro de la base de datos
-    await clienteAEliminar.destroy();
-
-    res.status(200).json({ success: true, message: "Cliente eliminado correctamente" });
-  } catch (error) {
-    console.error("Error al eliminar cliente:", error);
-    res.status(500).json({ error: "Error interno del servidor" });
-  }
-});
-
-
 
 
 routerApi(app);
+
+//Server
+app.listen(port, () => {
+  console.log("Port ==>", port);
+});
+

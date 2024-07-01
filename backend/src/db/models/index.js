@@ -5,7 +5,8 @@ const { Client, ClientSchema } = require("./clients.model.js");
 const { Supplier, SupplierSchema } = require("./suppliers.model.js");
 const { LoanProduct, LoanProductSchema } = require("./loanProducts.model.js");
 const { RawMaterial, RawMaterialSchema } = require("./rawMaterials.model.js");
-const { Worker, WorkerSchema } = require("./workers.js");
+const { Worker, WorkerSchema } = require("./workers.model.js");
+const { Sale, SaleSchema } = require("./sales.model.js");
 
 function setupModels(sequelize) {
   Admon.init(AdmonSchema, Admon.config(sequelize));
@@ -16,6 +17,7 @@ function setupModels(sequelize) {
   LoanProduct.init(LoanProductSchema, LoanProduct.config(sequelize));
   RawMaterial.init(RawMaterialSchema, RawMaterial.config(sequelize));
   Worker.init(WorkerSchema, Worker.config(sequelize));
+  Sale.init(SaleSchema, Sale.config(sequelize));
 }
 
 module.exports = setupModels;

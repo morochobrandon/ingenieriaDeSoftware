@@ -6,18 +6,18 @@
 	
 	<link rel="stylesheet" href="/footer/FooterGeneral.css">
 	<link rel="stylesheet" href="/sections/formularioBase.css">
-    <link rel="stylesheet" href="/Header/headerGeneral.css">
+    <link rel="stylesheet" href="/header/headerGeneral.css">
 
-  <title>Datos clientes</title>
+  <title>Datos producto Materia Prima</title>
  </head>
 <body>
 	<header>
-        <div class="logo">	<a href="/admin"><img src="/image/DiminutoLogo.png" alt="Logo" id="logo"></a></div>
+        <div class="logo">	<a href=""><img src="/image/DiminutoLogo.png" alt="Logo" id="logo"></a></div>
         <input type="checkbox" id="nav_check" hidden>
         <nav>
             <ul>
-              <li>
-                    <a href="/manager/agregar/cliente">Préstamos</a>
+                <li>
+                    <a href="">Préstamos</a>
                 </li>
                 <li>
                     <a href="">Ventas</a>
@@ -33,8 +33,12 @@
                 </li>
             </ul>
         </nav>
+        <label for="nav_check" class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
     </header>
-
 
 	<main>
           <div class="container">
@@ -44,6 +48,11 @@
                 <div class="details personal">
                     <span class="title">Detalles de la materia prima</span>
                     <div class="fields">
+
+                        <div hidden>
+                            <label>ID</label>
+                            <input type="text" name="id" id="id" placeholder="cosas para hacer a futuro" readonly>
+                        </div>
                         <div class="input-box">
                             <label>Nombre</label>
                             <input type="text" name="nombre" placeholder="Introduce el nombre de la materia prima" required>
@@ -107,7 +116,7 @@
         </div>
     </footer>
 
-   <script src="/botonAgregar/botonDeAgregarMateriaPrima.js"></script>
+   <script src="/boton/botonDeAgregarMateriaPrima.js"></script>
         <script> agregarEnBaseDeDatos();</script>
 </body>
 </html>

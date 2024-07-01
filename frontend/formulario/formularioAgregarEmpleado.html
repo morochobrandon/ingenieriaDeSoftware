@@ -6,13 +6,13 @@
 	
 	<link rel="stylesheet" href="/footer/FooterGeneral.css">
 	<link rel="stylesheet" href="/sections/formularioBase.css">
-    <link rel="stylesheet" href="/Header/headerGeneral.css">
+    <link rel="stylesheet" href="/header/headerGeneral.css">
 
    	<title>Datos Empleado</title>
  </head>
 <body>
 	<header>
-        <div class="logo">	<a href="/admin"><img src="/image/DiminutoLogo.png" alt="Logo" id="logo"></a></div>
+        <div class="logo">	<a href=""><img src="/image/DiminutoLogo.png" alt="Logo" id="logo"></a></div>
         <input type="checkbox" id="nav_check" hidden>
         <nav>
             <ul>
@@ -49,6 +49,11 @@
                 <div class="details personal">
                     <span class="title">Detalles del Trabajador</span>
                     <div class="fields">
+
+                        <div hidden>
+                            <label>ID</label>
+                            <input type="text" name="id" id="id" placeholder="cosas para hacer a futuro" readonly>
+                        </div>
                         <div class="input-box">
                             <label>Primero nombre del trabajador</label>
                             <input type="text" name="nombre" placeholder="Introduce tu primer nombre" required>
@@ -119,7 +124,7 @@
             <small>&copy; 2024 <b>Meriandes</b> - Las mejores comidas</small>
         </div>
     </footer>
-    <script src="/botonAgregar/botonDeAgregarEmpleado.js"></script>
+    <script src="/boton/botonDeAgregarEmpleado.js"></script>
 
       <script> agregarEnBaseDeDatos();</script>
     </body>

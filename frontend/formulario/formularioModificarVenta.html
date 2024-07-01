@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" href="/footer/FooterGeneral.css">
+	<link rel="stylesheet" href="/sections/formularioBase.css">
+    <link rel="stylesheet" href="/Header/headerGeneral.css">
+
+    <title>Datos Ventas</title>
+</head>
+<body>
+<header>
+        <div class="logo">	<a href=""><img src="/image/DiminutoLogo.png" alt="Logo" id="logo"></a></div>
+        <input type="checkbox" id="nav_check" hidden>
+        <nav>
+            <ul>
+                <li>
+                    <a href="">Préstamos</a>
+                </li>
+                <li>
+                    <a href="">Ventas</a>
+                </li>
+                <li>
+                    <a href="">Proveedor</a>
+                </li>
+                <li>
+                    <a href="">Materia Prima</a>
+                </li>
+                <li>
+                    <a href="">Cerrar Sesión</a>
+                </li>
+            </ul>
+        </nav>
+        <label for="nav_check" class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+    </header>
+
+
+	<main>
+          <div class="container">
+        <h2>Registrar Ventas</h2>
+        <form id="form-first">
+            <div>
+                <div class="details personal">
+                    <span class="title">ingresos</span>
+                    <span>formas de pago</span>
+                    <div class="fields">
+                        <div hidden>
+                            <label>ID</label>
+                            <input type="text" name="id" id="id" placeholder="cosas para hacer a futuro" readonly>
+                        </div>
+                        <div class="input-box">
+                            <label>Efectivo Bs</label>
+                            <input type="text" name="efectivo_bs" id="efectivo_bs" placeholder="Introduce el nombre" required>
+                        </div>
+                        <div class="input-box">
+                            <label>Pago Movil Bs.D.</label>
+                            <input type="text" name="pagoMovil_bs" id="pagoMovil_bs" placeholder="Introduce el nombre" required>
+                        </div>
+                        <div class="input-box">
+                            <label>Efectivo $(USD)</label>
+                            <input type="text" name="efectivo_divisa" id="efectivo_divisa" placeholder="Introduce el nombre" required>
+                        </div>
+                        <div class="input-box">
+                            <label>Efectivo €(Euro)</label>
+                            <input type="text" name="efectivo_euros" id="efectivo_euros" placeholder="Introduce el nombre" required>
+                        </div>
+
+                        <div class="input-box">
+                            <label>Divisas electronicas $ ZELLE</label>
+                            <input type="text" name="zelle" id="zelle" placeholder="Introduce el nombre" required>
+                        </div>
+                        <div class="input-box">
+                            <label>Credito</label>
+                            <input type="text" name="credito" id="credito" placeholder="Introduce el nombre" required>
+                        </div>  
+                        <div class="input-box">
+                            <label>Transferencia Bs.D.</label>
+                            <input type="text" name="transferencia_bs" id="transferencia_bs" placeholder="Introduce el nombre" required>
+                        </div>
+                        <div class="input-box">
+                            <label>PDV TDD Provicial Bs.D.</label>
+                            <input type="text" name="pdv_tdd_provincial_bs" id="pdv_tdd_provincial_bs" placeholder="Introduce el nombre" required>
+                        </div>
+                        <div class="input-box">
+                            <label>PDV TDC Provincial Bs.D.</label>
+                            <input type="text" name="pdv_tdc_provincial_bs" id="pdv_tdc_provincial_bs" placeholder="Introduce el monto" required>
+                        </div>
+                        <div class="input-box">
+                            <label>PDV TDD Bancamiga Bs.D.</label>
+                            <input type="text" name="pdv_tdd_bancamiga_bs" id="pdv_tdd_bancamiga_bs" placeholder="Introduce el monto" required>
+                        </div>
+                        <div class="input-box">
+                            <label>PDV TDC Bancamiga Bs.D.</label>
+                            <input type="text" name="pdv_tdc_bancamiga_bs" id="pdv_tdc_bancamiga_bs" placeholder="Introduce el monto" required>
+                        </div>
+                        <div class="input-box">
+                            <label>PDV TDD Banesco Bs.D.</label>
+                            <input type="text" name="pdv_tdd_banesco_bs" id="pdv_tdd_banesco_bs" placeholder="Introduce el monto" required>
+                        </div>
+                        <div class="input-box">
+                            <label>PDV TDC Banesco Bs.D.</label>
+                            <input type="text" name="pdv_tdc_banesco_bs" id="pdv_tdc_banesco_bs" placeholder="Introduce el monto" required>
+                        </div>
+                        <div class="input-box">
+                            <label>PDV TDD Mercantil Bs.D.</label>
+                            <input type="text" name="pdv_tdd_mercantil_bs" id="pdv_tdd_mercantil_bs" placeholder="Introduce el monto" required>
+                        </div>
+                        <div class="input-box">
+                            <label>PDV TDC Mercantil Bs.D.</label>
+                            <input type="text" name="pdv_tdc_mercantil_bs" id="pdv_tdc_mercantil_bs" placeholder="Introduce el monto" required>
+                        </div>
+                    </div>
+                </div>
+                        <div class="custom-popover">
+                          <button type="submit" class="boton-grande" id="btn-agregar">
+                            <span class="button-container">Confirmar</span>
+                          </button>
+                          <div class="popover-content" id="mensaje-exito" style="display: none;">
+                            Venta modificada con éxito
+                          </div>
+                        </div>
+            </div> 
+
+
+            
+        </form>
+    </div>
+	</main>
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#">
+                        <img src="/image/PequeñoLogo.png" alt="Logo de Meriandes">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h3>SOBRE NOSOTROS</h3>
+                <p>En Meriandes, nuestra misión es proporcionar comidas nutritivas y equilibradas a los estudiantes de las escuelas de Caracas</p>
+                <p>Creemos que una buena alimentación es esencial para el desarrollo físico y mental de los niños y niñas, y estamos comprometidos a garantizar que cada estudiante tenga acceso a alimentos de calidad. </p>
+            </div>
+            <div class="box">
+                <h3>SIGUENOS</h3>
+                <div class="red-social">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2024 <b>Meriandes</b> - Las mejores comidas</small>
+        </div>
+    </footer>
+   <script src="/boton/botonDeConfirmarModificarVenta.js"></script>
+      <script> agregarEnBaseDeDatos();</script>
+    </body>
+    <script src="/enviarInformacion/mandarVentaSeleccionadoDeTablaAFormulario.js"></script>
+</html>

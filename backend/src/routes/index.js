@@ -8,6 +8,7 @@ const suppliersRouter = require("./suppliers.router");
 const loanProductsRouter = require("./loanProducts.router");
 const rawMaterialsRouter = require("./rawMaterials.router");
 const workersRouter = require("./workers.router");
+const salesRouter = require("./sales.router");
 
 function routerApi(app) {
   const router = express.Router();
@@ -20,6 +21,7 @@ function routerApi(app) {
   router.use("/loanProducts", loanProductsRouter);
   router.use("/rawMaterials", rawMaterialsRouter); //HECHO
   router.use("/workers", workersRouter); //HECHO
+  router.use("/sales", salesRouter); //HECHO
 }
 
 module.exports = routerApi;
