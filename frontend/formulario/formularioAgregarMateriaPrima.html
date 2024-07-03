@@ -48,30 +48,25 @@
                 <div class="details personal">
                     <span class="title">Detalles de la materia prima</span>
                     <div class="fields">
-
-                        <div hidden>
-                            <label>ID</label>
-                            <input type="text" name="id" id="id" placeholder="cosas para hacer a futuro" readonly>
-                        </div>
                         <div class="input-box">
                             <label>Nombre</label>
                             <input type="text" name="nombre" placeholder="Introduce el nombre de la materia prima" required>
                         </div>
                         <div class="input-box">
                             <label>Precio Unitario</label>
-                            <input type="text" name="precio_unitario" placeholder="Introduce el precio Unitario" required>
+                            <input type="text" pattern="^[0-9]+" min="1" max="50" name="precio_unitario" placeholder="Introduce el precio Unitario" required>
                         </div>
                         <div class="input-box">
                             <label>Precio Total</label>
-                            <input type="text" name="precio_total" placeholder="Introduce el precio total" required>
+                            <input type="text" pattern="^[0-9]+" name="precio_total" placeholder="Introduce el precio total" required>
                         </div>
                         <div class="input-box">
                             <label>Cantidad</label>
-                            <input type="number" name="cantidad" placeholder="Introduce la Cantidad" required>
+                            <input type="number" pattern="^[0-9]+" min="1" name="cantidad" placeholder="Introduce la Cantidad" required>
                         </div>
                         <div class="input-box">
                             <label>Id proveedor</label>
-                            <input type="number" name="id_proveedor" placeholder="Introduce el ID del proveedor" required>
+                            <input type="number" pattern="^[0-9]+" min="1" name="id_proveedor" id="id_proveedor" placeholder="Introduce el ID del proveedor" readonly>
                         </div>
                     </div>
                 </div>
@@ -80,7 +75,7 @@
                             <span class="button-container">Agregar</span>
                           </button>
                           <div class="popover-content" id="mensaje-exito" style="display: none;">
-                            producto de materia prima agregado con éxito
+                            Producto de materia prima agregado con éxito
                           </div>
                         </div>
             </div>
@@ -119,4 +114,5 @@
    <script src="/boton/botonDeAgregarMateriaPrima.js"></script>
         <script> agregarEnBaseDeDatos();</script>
 </body>
+       <script src="/enviarInformacion/mandarIDProveedorSeleccionadoDeTablaAFormulario.js"></script>
 </html>

@@ -55,23 +55,23 @@
                         </div>
                         <div class="input-box">
                             <label>Primero nombre del trabajador</label>
-                            <input type="text" name="nombre" id="nombre" placeholder="Introduce tu primer nombre" required>
+                            <input type="text" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*$" name="nombre" id="nombre" placeholder="Introduce tu primer nombre" required>
                         </div>
                         <div class="input-box">
                             <label>Apellido del trabajador</label>
-                            <input type="text" name="apellido" id="apellido" placeholder="Introduce tu primer apellido" required>
+                            <input type="text" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*$" name="apellido" id="apellido" placeholder="Introduce tu primer apellido" required>
                         </div>
                         <div class="input-box">
                             <label>Segundo nombre del trabajador</label>
-                            <input type="text" name="segundo_nombre" id="segundo_nombre" placeholder="Introduce tu segundo nombre" required>
+                            <input type="text" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*$" name="segundo_nombre" id="segundo_nombre" placeholder="Introduce tu segundo nombre" required>
                         </div>
                         <div class="input-box">
                             <label>Segundo apellido del trabajador</label>
-                            <input type="text" name="segundo_apellido" id="segundo_apellido" placeholder="Introduce tu segundo apellido" required>
+                            <input type="text" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*$" name="segundo_apellido" id="segundo_apellido" placeholder="Introduce tu segundo apellido" required>
                         </div>
                         <div class="input-box">
-                            <label>Numero de celuda</label>
-                            <input type="number" name="cedula" id="cedula" placeholder="Introduce tu numero de cedula" required>
+                            <label>Numero de cédula</label>
+                            <input type="number" min="6000000" max="50000000" name="cedula" id="cedula" placeholder="Introduce tu numero de cedula" required>
                         </div>
                         <div class="input-box">
                             <label>Cargo</label>
@@ -89,6 +89,9 @@
                           </button>
                           <div class="popover-content" id="mensaje-exito" style="display: none;">
                             Empleado modificado con éxito
+                          </div>
+                          <div class="popover-content" id="mensaje-cedula" style="display: none;">
+                            Empleado con cédula ya existente
                           </div>
                         </div>
             </div>

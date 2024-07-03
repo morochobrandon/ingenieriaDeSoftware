@@ -36,6 +36,8 @@ app.use(express.json());
 
 
 const baseRoutesFrontend = {
+  login: "/login", 
+
   agregarCliente: "/agregar/cliente", ////////////////////////////////
   agregarProductoVenta: "/agregar/productoVenta", ////////////////////
   agregarProveedor: "/agregar/proveedor", ////////////////////////////
@@ -46,7 +48,7 @@ const baseRoutesFrontend = {
   carritoCompra: "/carrito/compra/cliente", //////////////////////////
   catalogo: "/catalogo", /////////////////////////////////////////////
   elegirClienteQueSeLeFia: "/elegirClienteQueSeLeFia", ///////////////
-
+  
   //tablas
   consultarCliente: "/consultar/cliente", ////////////////////////////
   consultarProductoVenta: "/consultar/productoVenta",
@@ -74,6 +76,7 @@ const baseRoutesFrontend = {
   elegirClienteConsultarCredito: "/elegir/cliente/consultar/credito",
   elegirClienteModificarCredito: "/elegir/cliente/modificar/credito",
   elegirClienteEliminarCredito: "/elegir/cliente/eliminar/credito", //
+  elegirProveedorParaAgregarMateriaPrima:"/elegir/proveedor/para/agregar/productoMateriaPrima",
   //especifico
   consultarClienteEspecifico: "/consultar/cliente/especifico", //
   consultarProductoVentaEspecifico: "/consultar/productoVenta/especifico", //
@@ -92,9 +95,15 @@ const baseRoutesFrontend = {
   modificarEmpleadoEspecifico: "/modificar/empleado/especifico", //
   modificarCreditoClienteEspecifico: "/modificar/credito/cliente/especifico",
   modificarVentaEspecifico: "/modificar/venta/especifico", //
+
+  landinPages: "/landinPages",
+  landinPagesAdministrador: "/landinPagesA",
+  landinPagesGerente: "/landinPagesG"
 };
 
-
+app.get(baseRoutesFrontend.login, (req, res) =>
+  res.sendFile(rutaFrontend + "/log/login.html")
+);
 
 
 
@@ -276,6 +285,10 @@ app.get(baseRoutesFrontend.eliminarProveedor, (req, res) =>
 
 // ----- agregar materia prima  -------
 
+app.get(baseRoutesFrontend.elegirProveedorParaAgregarMateriaPrima, (req, res) =>
+  res.sendFile(rutaFrontend +"/formulario/elegirProveedorParaAgregarMateriaPrimaEnTabla.html")
+);
+
 app.get(baseRoutesFrontend.agregarProductoMateriaPrima, (req, res) =>
   res.sendFile(rutaFrontend + "/formulario/formularioAgregarMateriaPrima.html")
 );
@@ -432,12 +445,18 @@ app.get(baseRoutesFrontend.eliminarCliente, (req, res) =>
 );
 
 
+// ----- landingPages  -------
 
+app.get(baseRoutesFrontend.landinPages, (req,res) =>
+  res.sendFile(rutaFrontend + "/landinPages/landinPagesJefe.html") 
+);
 
-
-
-
-
+app.get(baseRoutesFrontend.landinPagesAdministrador, (req,res) =>
+  res.sendFile(rutaFrontend + "/landinPages/landinPagesAdministrador.html") 
+);
+app.get(baseRoutesFrontend.landinPagesGerente, (req,res) =>
+  res.sendFile(rutaFrontend + "/landinPages/landinPagesGerente.html") 
+);
 
 //Rutas
 

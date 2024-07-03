@@ -1,4 +1,6 @@
-// En el archivo formularioAgregarCliente.html se importa este archivo
+const { Console } = require("console");
+
+// En el archivo agregarClientes.js
 const url = "http://localhost:3000/api/v1/clients";
 
 // Escucha el evento submit del formulario
@@ -38,43 +40,74 @@ function agregarEnBaseDeDatos() {
       };
 
       console.log("Datos a enviar:", nuevoCliente);
-
       try {
-        // Realiza la solicitud POST al servidor
-        const res = await fetch(url, {
-          method: "POST",
-          mode: "cors",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(nuevoCliente),
-        });
+        const response = await fetch(`http://localhost:3000/api/v1/clients`);
+        
+        if (response.ok) {
+            const data = await response.json();
+            
+            const cedulas = data.map((data) => data.cedula);
+            const cedulasFiltradas = cedulas.filter((cedula) => cedula == cedulaInt)
+           
 
-        if (res.ok) {
-          const resJson = await res.json();
-          console.log("Cliente guardado:", resJson);
-
-          // Vaciar   los valores de los campos del formulario
-          e.target.elements.nombre.value = "";
-          e.target.elements.apellido.value = "";
-          e.target.elements.segundo_nombre.value = "";
-          e.target.elements.segundo_apellido.value = "";
-          e.target.elements.cedula.value = "";
-          e.target.elements.deuda_acomulada.value = "";
-
-          // Después de borrar los valores de los campos y confirmar que el cliente se ha guardado
-          document.getElementById("mensaje-exito").style.display = "block";
-
-          // Oculta el mensaje después de 5 segundos
-          setTimeout(function () {
-            document.getElementById("mensaje-exito").style.display = "none";
-          }, 5000); // 5000 milisegundos = 5 segundos
+            if (cedulasFiltradas.length > 0) {
+                console.log("Ya existe un cliente con esta cédula");
+               
+                    // Después de borrar los valores de los campos y confirmar que el cliente se ha guardado
+                    document.getElementById("mensaje-cedula").style.display = "block";
+          
+                    // Oculta el mensaje después de 5 segundos
+                    setTimeout(function () {
+                      document.getElementById("mensaje-cedula").style.display = "none";
+                    }, 5000); // 5000 milisegundos = 5 segundos
+                
+                // No guardes el nuevo cliente
+            } else {
+                console.log("No se encontró un cliente con esta cédula");
+                try {
+                  // Realiza la solicitud POST al servidor
+                  const res = await fetch("http://localhost:3000/api/v1/clients", {
+                    method: "POST",
+                    mode: "cors",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(nuevoCliente),
+                  });
+          
+                  if (res.ok) {
+                    const resJson = await res.json();
+                    console.log("Cliente guardado:", resJson);
+          
+                    // Vaciar   los valores de los campos del formulario
+                    e.target.elements.nombre.value = "";
+                    e.target.elements.apellido.value = "";
+                    e.target.elements.segundo_nombre.value = "";
+                    e.target.elements.segundo_apellido.value = "";
+                    e.target.elements.cedula.value = "";
+                    e.target.elements.deuda_acomulada.value = "";
+                    
+                    // Después de borrar los valores de los campos y confirmar que el cliente se ha guardado
+                    document.getElementById("mensaje-exito").style.display = "block";
+          
+                    // Oculta el mensaje después de 5 segundos
+                    setTimeout(function () {
+                      document.getElementById("mensaje-exito").style.display = "none";
+                    }, 5000); // 5000 milisegundos = 5 segundos
+                  } else {
+                    const errorText = await res.text(); // Obtén el mensaje de error del servidor
+                    console.error("Error al guardar el cliente:", res.status, errorText);
+                  }
+                } catch (error) {
+                  console.error("Error en la solicitud:", error);
+                }
+            }
         } else {
-          const errorText = await res.text(); // Obtén el mensaje de error del servidor
-          console.error("Error al guardar el cliente:", res.status, errorText);
+            console.error("Error al obtener datos:", response.status);
         }
-      } catch (error) {
-        console.error("Error en la solicitud:", error);
-      }
+    } catch (error) {
+        console.error("Error en la solicitud GET:", error);
+    }
+      
     });
 }

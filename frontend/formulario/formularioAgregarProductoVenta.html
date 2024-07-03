@@ -59,14 +59,14 @@
                         </div>
                         <div class="input-box">
                             <label>Precio</label>
-                            <input type="text" name="precio" placeholder="Introduce el precio" required>
+                            <input type="number" pattern="^[0-9]+" min="1" max="50" name="precio" placeholder="Introduce el precio" required>
                         </div>
                         <div class="input-box">
                             <label>Tipo</label>
                             <input type="text" name="tipo" placeholder="Introduce el tipo" required>
                         </div>
                         <div>
-                            <label>foto</label>
+                            <label>Foto</label>
                             <input type="file" id="fotoProductoVenta" required>
                         </div>
                     </div>

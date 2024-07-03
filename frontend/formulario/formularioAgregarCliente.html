@@ -18,7 +18,7 @@
         <nav>
             <ul>
                 <li>
-                    <a href="">Préstamos</a>
+                    <a href="/frontend/formulario/formularioAgregarCliente.html">Préstamos</a>
                 </li>
                 <li>
                     <a href="">Ventas</a>
@@ -56,28 +56,28 @@
                             <input type="text" name="id" id="id" placeholder="cosas para hacer a futuro" readonly>
                         </div>
                         <div class="input-box">
-                            <label>Primero nombre del cliente</label>
-                            <input type="text" name="nombre" placeholder="Introduce tu primer nombre" required>
+                            <label>Primero nombre del Cliente</label>
+                            <input type="text" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*$" name="nombre" placeholder="Introduce tu primer nombre" required>
                         </div>
                         <div class="input-box">
                             <label>Apellido del Cliente</label>
-                            <input type="text" name="apellido" placeholder="Introduce tu primer apellido" required>
+                            <input type="text" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*$" name="apellido" placeholder="Introduce tu primer apellido" required>
                         </div>
                         <div class="input-box">
-                            <label>Segundo nombre del cliente</label>
-                            <input type="text" name="segundo_nombre" placeholder="Introduce tu segundo nombre" required>
+                            <label>Segundo nombre del Cliente</label>
+                            <input type="text" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*$" name="segundo_nombre" placeholder="Introduce tu segundo nombre" required>
                         </div>
                         <div class="input-box">
-                            <label>Segundo apellido del cliente</label>
-                            <input type="text" name="segundo_apellido" placeholder="Introduce tu segundo apellido" required>
+                            <label>Segundo apellido del Cliente</label>
+                            <input type="text" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*$" name="segundo_apellido" placeholder="Introduce tu segundo apellido" required>
                         </div>
                         <div class="input-box">
-                            <label>Numero de celuda</label>
-                            <input type="text" name="cedula" placeholder="Introduce tu numero de cedula" required>
+                            <label>Numero de cédula</label>
+                            <input type="text" min="6000000" max="50000000" name="cedula" placeholder="Introduce tu numero de cedula" required>
                         </div>
                         <div class="input-box">
                             <label>Deuda acumula</label>
-                            <input type="text" name="deuda_acomulada" placeholder="Introduce la deuda acumulada" required>
+                            <input type="text" pattern="^[0-9]+" min="0" max="500" name="deuda_acomulada" placeholder="Introduce la deuda acumulada" required>
                         </div>
                     </div>
                 </div>
@@ -87,6 +87,9 @@
                           </button>
                           <div class="popover-content" id="mensaje-exito" style="display: none;">
                             Cliente agregado con éxito
+                          </div>
+                          <div class="popover-content" id="mensaje-cedula" style="display: none;">
+                            Usuario con cédula ya existente
                           </div>
                         </div>
             </div>

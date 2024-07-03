@@ -60,12 +60,12 @@
                 
                             <div class="input-box">
                                 <label for="phonenumber">Numero de telefono</label>
-                                <input type="text" name="nro_telefono" id="nro_telefono" placeholder="Introduce el numero de telefono" required>
+                                <input type="text" pattern="^[0-9]+"  maxlength="11" minlength="10" name="nro_telefono" id="nro_telefono" placeholder="Introduce el numero de telefono" required>
                             </div>
 
                         <div class="input-box">
                             <label>Numero de factura</label>
-                            <input type="text" name="nro_factura"  id="nro_factura" placeholder="Introduce el tipo de proveedor" required>
+                            <input type="text" pattern="[0-9]+" min="1" name="nro_factura"  id="nro_factura" placeholder="Introduce el tipo de proveedor" required>
                         </div>
                     </div>
                 </div>
@@ -75,6 +75,9 @@
                           </button>
                           <div class="popover-content" id="mensaje-exito" style="display: none;">
                             Proveedor modificado con éxito
+                          </div>
+                          <div class="popover-content" id="mensaje-error" style="display: none;">
+                            Proveedor con número de factura ya existente
                           </div>
                         </div>
             </div> 

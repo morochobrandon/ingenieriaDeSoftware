@@ -59,19 +59,19 @@
                         </div>
                         <div class="input-box">
                             <label>Precio Unitario</label>
-                            <input type="text" name="precio_unitario" id="precio_unitario" placeholder="Introduce el precio Unitario" required>
+                            <input type="text" pattern="^[0-9]+" min="1" max="50" name="precio_unitario" id="precio_unitario" placeholder="Introduce el precio Unitario" required>
                         </div>
                         <div class="input-box">
                             <label>Precio Total</label>
-                            <input type="text" name="precio_total" id="precio_total" placeholder="Introduce el precio total" required>
+                            <input type="text" pattern="^[0-9]+" name="precio_total" id="precio_total" placeholder="Introduce el precio total" required>
                         </div>
                         <div class="input-box">
                             <label>Cantidad</label>
-                            <input type="number" name="cantidad" id="cantidad" placeholder="Introduce la Cantidad" required>
+                            <input type="number" pattern="^[0-9]+" min="1" name="cantidad" id="cantidad" placeholder="Introduce la Cantidad" required>
                         </div>
                         <div class="input-box">
                             <label>Id proveedor</label>
-                            <input type="number" name="id_proveedor" id="id_proveedor" placeholder="Introduce el ID del proveedor" required>
+                            <input type="number" pattern="^[0-9]+" min="1" name="id_proveedor" id="id_proveedor" placeholder="Introduce el ID del proveedor" readonly>
                         </div>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                             <span class="button-container">Guardar cambios</span>
                           </button>
                           <div class="popover-content" id="mensaje-exito" style="display: none;">
-                            producto de materia prima modificado con éxito
+                            Producto de materia prima modificado con éxito
                           </div>
                         </div>
             </div>

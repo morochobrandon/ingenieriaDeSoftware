@@ -46,7 +46,7 @@
 
 	<main>
           <div class="container">
-        <h2>Registrar Cliente</h2>
+        <h2>Modificar Cliente</h2>
         <form id="form-first">
             <div>
                 <div class="details personal">
@@ -58,27 +58,27 @@
                         </div>
                         <div class="input-box">
                             <label>Primero nombre del cliente</label>
-                            <input type="text" name="nombre" placeholder="Introduce tu primer nombre" required>
+                            <input type="text"  name="nombre" id="nombre" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*$" name="nombre" placeholder="Introduce tu primer nombre" required>
                         </div>
                         <div class="input-box">
                             <label>Apellido del Cliente</label>
-                            <input type="text" name="apellido" placeholder="Introduce tu primer apellido" required>
+                            <input type="text"  name="apellido" id="apellido" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*$" name="apellido" placeholder="Introduce tu primer apellido" required>
                         </div>
                         <div class="input-box">
                             <label>Segundo nombre del cliente</label>
-                            <input type="text" name="segundo_nombre" placeholder="Introduce tu segundo nombre" required>
+                            <input type="text"  name="segundo_nombre" id="segundo_nombre" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*$" name="segundo_nombre" placeholder="Introduce tu segundo nombre" required>
                         </div>
                         <div class="input-box">
                             <label>Segundo apellido del cliente</label>
-                            <input type="text" name="segundo_apellido" placeholder="Introduce tu segundo apellido" required>
+                            <input type="text"  name="segundo_apellido" id="segundo_apellido" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*$" name="segundo_apellido" placeholder="Introduce tu segundo apellido" required>
                         </div>
                         <div class="input-box">
-                            <label>Numero de celuda</label>
-                            <input type="text" name="cedula" placeholder="Introduce tu numero de cedula" required>
+                            <label>Numero de cédula</label>
+                            <input type="text"  name="cedula" id="cedula" pattern="^[0-9]+" minlength="7" maxlength="8" name="cedula" placeholder="Introduce tu numero de cedula" required>
                         </div>
                         <div class="input-box">
                             <label>Deuda acumula</label>
-                            <input type="text" name="deuda_acomulada" placeholder="Introduce la deuda acumulada" required>
+                            <input type="text"  name="deuda_acomulada" id="deuda_acomulada" pattern="^[0-9]+" min="0" max="500" name="deuda_acomulada" placeholder="Introduce la deuda acumulada" required>
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,10 @@
                             <span class="button-container">Agregar</span>
                           </button>
                           <div class="popover-content" id="mensaje-exito" style="display: none;">
-                            Cliente agregado con éxito
+                            Cliente modificado con éxito
+                          </div>
+                          <div class="popover-content" id="mensaje-error" style="display: none;">
+                            Cedula ya existente
                           </div>
                         </div>
             </div>
@@ -122,7 +125,9 @@
             <small>&copy; 2024 <b>Meriandes</b> - Las mejores comidas</small>
         </div>
     </footer>
-      <script src="/botonAgregar/botonDeAgregarCliente.js" ></script>
+      <script src="/boton/botonDeConfirmarModificarCliente.js" ></script>
       <script> agregarEnBaseDeDatos();</script>
     </body>
+    <script src="/enviarInformacion/mandarClienteSeleccionadoDeTablaAFormulario.js"></script>
+
 </html>

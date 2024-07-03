@@ -1,11 +1,8 @@
 // En el archivo formularioAgregarCliente.html se importa este archivo
 const url = "http://localhost:3000/api/v1/loanProducts";
 
-
-
-
-
 async function agregarEnBaseDeDatos() {
+   actualizarDeudaCliente();
   try {
     // Obtener los productos en memoria
     const productosEnMemoria = JSON.parse(localStorage.getItem("Productos"));
@@ -55,15 +52,7 @@ async function agregarEnBaseDeDatos() {
 
       // Vaciar los productos en memoria después de guardarlos
       localStorage.removeItem("Productos");
-/*
-      // Mostrar mensaje de éxito
-      document.getElementById("mensaje-exito").style.display = "block";
 
-      // Ocultar el mensaje después de 5 segundos
-      setTimeout(function () {
-        document.getElementById("mensaje-exito").style.display = "none";
-      }, 5000); // 5000 milisegundos = 5 segundos
-      */
       window.location.href = "/carrito/compra/cliente";
     } else {
       console.log("No hay productos para guardar en la base de datos.");
@@ -71,96 +60,63 @@ async function agregarEnBaseDeDatos() {
   } catch (error) {
     console.error("Error en la función agregarEnBaseDeDatos:", error);
   }
+
+ 
 }
 
 
-// Escucha el evento submit del formulario
+async function actualizarDeudaCliente() {
+  try {
+    const idClienteElement = document.getElementById("idCliente");
+    const precio = parseInt(document.getElementById("precio").textContent);
+    const deuda_acomuladaClienteElement = (document.getElementById("deuda_acomuladaCliente"));
 
-/*
-function agregarEnBaseDeDatos() {
-  document
-    .getElementById("form-first")
-    .addEventListener("submit", async (e) => {
-      e.preventDefault();
 
-      // Obtener los productos en memoria
-      const productosEnMemoria = JSON.parse(localStorage.getItem("Productos"));
+    console.log("El id del cliente es:", idClienteElement.value);
+    console.log("La cantidad es:", precio);
+    console.log("La deuda del cliente es:", deuda_acomuladaClienteElement.value);
 
-      if (productosEnMemoria && productosEnMemoria.length > 0) {
+    /*
+    if (isNaN(cantidad) || isNaN(deuda_acomuladaClienteElement)) {
+      console.error("Los valores no son numéricos.");
+      return;
+    }
+   */
+    let deudaMasProducto =
+      parseInt(deuda_acomuladaClienteElement.value) + precio;
 
-        const idCliente = clienteRecuperado.id;
-        // Iterar sobre los productos
-        productosEnMemoria.forEach((producto, index) => {
-          console.log(`Producto ${index + 1}:`);
-          console.log("ID:", producto.id);
-          console.log("Nombre:", producto.nombre);
-          console.log("Cantidad:", producto.cantidad);
-          console.log("Precio:", producto.precio);
-          console.log("Imagen:", producto.imagen);
-          console.log("Tipo:", producto.tipo);
-          console.log("Fecha de creación:", producto.createdAt);
-          console.log("Última actualización:", producto.updatedAt);
-          console.log("--------------------");
-        });
-      } else {
-        console.log("No se encontraron datos en memoria.");
+    console.log("El precio a aumentar es:", deudaMasProducto);
+
+    const clienteModificado = {
+      deuda_acomulada: deudaMasProducto,
+    };
+
+    console.log("El cliente modificado es:");
+    console.log(clienteModificado);
+
+    const res = await fetch(
+      `http://localhost:3000/api/v1/clients/${idClienteElement.value}`,
+      {
+        method: "PUT",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(clienteModificado),
       }
+    );
 
-      // Verificar si hay productos en memoria
-      if (productosEnMemoria && productosEnMemoria.length > 0) {
-        // Iterar sobre los productos y guardar cada uno según su cantidad
-        for (const producto of productosEnMemoria) {
-          for (let i = 0; i < producto.cantidad; i++) {
-            const nuevoProductoFiado = {
-              nombre: producto.nombre,
-              precio: producto.precio,
-              tipo: producto.tipo,
-              id_cliente: idCliente,
-            };
+    console.log("Cliente modificado:", clienteModificado);
 
-            console.log("Datos a enviar:", nuevoProductoFiado);
-
-            try {
-              // Realiza la solicitud POST al servidor para guardar el producto
-              const res = await fetch(url, {
-                method: "POST",
-                mode: "cors",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify(nuevoProductoFiado),
-              });
-
-              if (res.ok) {
-                const resJson = await res.json();
-                console.log("Producto guardado:", resJson);
-              } else {
-                const errorText = await res.text(); // Obtén el mensaje de error del servidor
-                console.error(
-                  "Error al guardar el producto:",
-                  res.status,
-                  errorText
-                );
-              }
-            } catch (error) {
-              console.error("Error en la solicitud:", error);
-            }
-          }
-        }
-
-        // Vaciar los productos en memoria después de guardarlos
-        localStorage.removeItem("Productos");
-
-        // Mostrar mensaje de éxito
-        document.getElementById("mensaje-exito").style.display = "block";
-
-        // Ocultar el mensaje después de 5 segundos
-        setTimeout(function () {
-          document.getElementById("mensaje-exito").style.display = "none";
-        }, 5000); // 5000 milisegundos = 5 segundos
-      } else {
-        console.log("No hay productos para guardar en la base de datos.");
-      }
-    });
+    if (!res.ok) {
+      const errorText = await res.text();
+      console.error(
+        "Error al actualizar la deuda del cliente:",
+        res.status,
+        errorText
+      );
+    }
+  } catch (error) {
+    console.error("Error en la función actualizarDeudaCliente:", error);
+  }
 }
-    */
