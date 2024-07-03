@@ -2,16 +2,17 @@ const contenedorProductosFiados = document.getElementById("tabla-container");
 
 /** Crea los productosFiados en la tabla con productosFiados.js */
 function crearFilasEnTabla(productosFiados) {
-  productosFiados.forEach((productoFiado) => {
+  const idCliente = document.getElementById("id");
+  const productosFiadosFiltro = productosFiados.filter((productoFiado) => (productoFiado.id_cliente == parseInt(idCliente.value)));
+  productosFiadosFiltro.forEach((productoFiado) => {
     if (contenedorProductosFiados) {
       // lógica de tu función
       const nuevoProductoFiado = document.createElement("tr");
       nuevoProductoFiado.classList = "fila-tabla";
       nuevoProductoFiado.innerHTML = `
           <td data-titulo="nombre">${productoFiado.nombre}</td>
-          <td data-titulo="apellido">${productoFiado.precio}</td>
-          <td data-titulo="cedula">${productoFiado.tipo}</td>
-          <td data-titulo="deuda">${productoFiado.id_cliente}$</td>
+          <td data-titulo="precio">${productoFiado.precio}</td>
+          <td data-titulo="Tipo">${productoFiado.tipo}</td>
           <td>
             <button>Seleccionar</button>
           </td>

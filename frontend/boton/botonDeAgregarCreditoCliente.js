@@ -61,7 +61,7 @@ async function agregarEnBaseDeDatos() {
     console.error("Error en la función agregarEnBaseDeDatos:", error);
   }
 
- 
+  window.location.href = "/elegirClienteQueSeLeFia";
 }
 
 
