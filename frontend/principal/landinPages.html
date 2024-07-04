@@ -1,30 +1,92 @@
 <!DOCTYPE html>
-<html lang="es">
-	<head>
-		
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0"
-		/>
-		<title>MERIANDES</title>
-		<link rel="stylesheet" href="/principal/principal.css" />
-		<link rel="stylesheet" href="/footer/FooterGeneral.css">
-		<link rel="stylesheet" href="/Header/headerGeneral.css">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MERIANDES</title>
+
+    <link rel="stylesheet" href="/principal/principal.css" />
+		<link rel="stylesheet" href="/Footer/FooterGeneral.css">
+		<link rel="stylesheet" href="/Header/HeaderGeneral.css">
 		 <!-- Swiper CSS -->
-		 <!--<link rel="stylesheet" href="/pages/principal/swiper-bundle.min.css"> -->
-         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-		 <!-- CSS -->
-		 <link rel="stylesheet" href="/pages/principal/targetaSedeCantinas.css">
-        
-        <!-- CSS -->
-        <!-- <link rel="stylesheet" href="/pages/principal/principal.css"> -->
-		
-	</head>
-	<body>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+
+    <style>
+      body {
+        margin: 0;
+      }
+      .swiper-hero {
+        width: 100%;
+        max-width: 1600px;
+      }
+
+      .swiper-hero .swiper-slide {
+        width: 250px;
+      }
+
+      .swiper-hero img {
+        height: 255px;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      @media (min-width: 1024px) {
+        .swiper-hero img {
+          height: 344px;
+        }
+      }
+
+      .swiper-hero .swiper-button-prev,
+      .swiper-hero .swiper-button-next {
+        --swiper-navigation-size: 20px;
+        background-color: white;
+        height: 70px;
+        width: 50px;
+        margin-top: -35px;
+
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .swiper-hero .swiper-button-prev {
+        border-radius: 0 65px 65px 0;
+        left: -10px;
+      }
+      .swiper-hero .swiper-button-next {
+        border-radius: 65px 0 0 65px;
+        right: -10px;
+      }
+
+      .swiper-hero:hover .swiper-button-prev,
+      .swiper-hero:hover .swiper-button-next {
+        opacity: 1;
+      }
+
+      .swiper-hero .swiper-pagination {
+        --swiper-pagination-color: white;
+        --swiper-pagination-bullet-size: 6px;
+        --swiper-pagination-bullet-inactive-color: #000;
+        --swiper-pagination-bullet-inactive-opacity: 0.25;
+        --swiper-pagination-bullet-opacity: 1;
+        --swiper-pagination-bullet-horizontal-gap: 2px;
+      }
+
+      .swiper-hero .swiper-pagination-bullet {
+        box-shadow: inset 0 0 0 1px #fff;
+      }
+
+      .swiper-hero .swiper-pagination-bullet-active {
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+      }
+    </style>
+  </head>
+  <body>
 		<header>
-			<div class="logo">	<a href="/admin"><img src="/assets/image/DiminutoLogo.png" alt="Logo" id="logo"></a></div>
+			<div class="logo">	<a href=""><img src="/image/DiminutoLogo.png" alt="Logo" id="logo"></a></div>
 			<input type="checkbox" id="nav_check" hidden>
 			<nav>
 				<ul>
@@ -57,7 +119,7 @@
 			<div class="content-banner">
 				<p>Sabores que encantan</p>
 				<h2>100% Natural <br />Comida Fresca</h2>
-				<a href="#">Sistema administrativo</a>
+				<a href="/login">Sistema administrativo</a>
 			</div>
 		</section>
 
@@ -101,31 +163,31 @@
         <!-- Slides -->
         <div class="swiper-slide">
           <img
-            src="/pages/image/profile1.png"
+            src="/image/profile1.png"
             alt=""
           />
         </div>
         <div class="swiper-slide">
           <img
-            src="/pages/image/profile2.png"
+            src="/image/profile2.png"
             alt=""
           />
         </div>
         <div class="swiper-slide">
           <img
-            src="/pages/image/profile3.png"
+            src="/image/profile3.png"
             alt=""
           />
         </div>
         <div class="swiper-slide">
           <img
-            src="/pages/image/profile4.png"
+            src="/image/profile4.png"
             alt=""
           />
         </div>
         <div class="swiper-slide">
           <img
-            src="/pages/image/profile5.png"
+            src="/image/profile5.png"
             alt=""
           />
         </div>
@@ -155,7 +217,7 @@
 					<!-- Producto 1 -->
 					<div class="card-product">
 						<div class="container-img">
-							<img src="/pages/image/cafe-irish.jpg" alt="Cafe Irish" />
+							<img src="/image/cafe-irish.jpg" alt="Cafe Irish" />
 							<span class="discount">-13%</span>
 							<div class="button-group">
 								<span>
@@ -186,7 +248,7 @@
 					<div class="card-product">
 						<div class="container-img">
 							<img
-								src="/pages/image/cafe-ingles.jpg"
+								src="/image/cafe-ingles.jpg"
 								alt="Cafe incafe-ingles.jpg"
 							/>
 							<span class="discount">-22%</span>
@@ -219,7 +281,7 @@
 					<div class="card-product">
 						<div class="container-img">
 							<img
-								src="/pages/image/cafe-australiano.jpg"
+								src="/image/cafe-australiano.jpg"
 								alt="Cafe Australiano"
 							/>
 							<div class="button-group">
@@ -250,7 +312,7 @@
 					<!--  -->
 					<div class="card-product">
 						<div class="container-img">
-							<img src="/pages/image/cafe-helado.jpg" alt="Cafe Helado" />
+							<img src="/image/cafe-helado.jpg" alt="Cafe Helado" />
 							<div class="button-group">
 								<span>
 									<i class="fa-regular fa-eye"></i>
@@ -281,23 +343,23 @@
 
 			<section class="gallery">
 				<img
-					src="/pages/image/gallery1.jpg"
+					src="/image/gallery1.jpg"
 					alt="Gallery Img1"
 					class="gallery-img-1"
 				/><img
-					src="/pages/image/gallery2.jpg"
+					src="/image/gallery2.jpg"
 					alt="Gallery Img2"
 					class="gallery-img-2"
 				/><img
-					src="/pages/image/gallery3.jpg"
+					src="/image/gallery3.jpg"
 					alt="Gallery Img3"
 					class="gallery-img-3"
 				/><img
-					src="/pages/image/gallery4.jpg"
+					src="/image/gallery4.jpg"
 					alt="Gallery Img4"
 					class="gallery-img-4"
 				/><img
-					src="/pages/image/gallery5.jpg"
+					src="/image/gallery5.jpg"
 					alt="Gallery Img5"
 					class="gallery-img-5"
 				/>
@@ -310,7 +372,7 @@
 					<!-- Producto 1 -->
 					<div class="card-product">
 						<div class="container-img">
-							<img src="/pages/image/cafe-irish.jpg" alt="Cafe Irish" />
+							<img src="/image/cafe-irish.jpg" alt="Cafe Irish" />
 							<span class="discount">-13%</span>
 							<div class="button-group">
 								<span>
@@ -341,7 +403,7 @@
 					<div class="card-product">
 						<div class="container-img">
 							<img
-								src="/pages/image/cafe-ingles.jpg"
+								src="/image/cafe-ingles.jpg"
 								alt="Cafe incafe-ingles.jpg"
 							/>
 							<span class="discount">-22%</span>
@@ -374,7 +436,7 @@
 					<!--  -->
 					<div class="card-product">
 						<div class="container-img">
-							<img src="/pages/image/cafe-viena.jpg" alt="Cafe Viena" />
+							<img src="/image/cafe-viena.jpg" alt="Cafe Viena" />
 							<span class="discount">-30%</span>
 							<div class="button-group">
 								<span>
@@ -404,7 +466,7 @@
 					<!--  -->
 					<div class="card-product">
 						<div class="container-img">
-							<img src="/pages/image/cafe-liqueurs.jpg" alt="Cafe Liqueurs" />
+							<img src="/image/cafe-liqueurs.jpg" alt="Cafe Liqueurs" />
 							<div class="button-group">
 								<span>
 									<i class="fa-regular fa-eye"></i>
@@ -439,7 +501,7 @@
 				<div class="container-blogs">
 					<div class="card-blog">
 						<div class="container-img">
-							<img src="/pages/image/blog-1.jpg" alt="Imagen Blog 1" />
+							<img src="/image/blog-1.jpg" alt="Imagen Blog 1" />
 							<div class="button-group-blog">
 								<span>
 									<i class="fa-solid fa-magnifying-glass"></i>
@@ -462,7 +524,7 @@
 					</div>
 					<div class="card-blog">
 						<div class="container-img">
-							<img src="/pages/image/blog-2.jpg" alt="Imagen Blog 2" />
+							<img src="/image/blog-2.jpg" alt="Imagen Blog 2" />
 							<div class="button-group-blog">
 								<span>
 									<i class="fa-solid fa-magnifying-glass"></i>
@@ -485,7 +547,7 @@
 					</div>
 					<div class="card-blog">
 						<div class="container-img">
-							<img src="/pages/image/blog-3.jpg" alt="Imagen Blog 3" />
+							<img src="/image/blog-3.jpg" alt="Imagen Blog 3" />
 							<div class="button-group-blog">
 								<span>
 									<i class="fa-solid fa-magnifying-glass"></i>
@@ -515,7 +577,7 @@
 				<div class="box">
 					<figure>
 						<a href="#">
-							<img src="/assets/image/PequeñoLogo.png" alt="Logo de Meriandes">
+							<img src="/image/PequeñoLogo.png" alt="Logo de Meriandes">
 						</a>
 					</figure>
 				</div>
@@ -546,9 +608,9 @@
 	</body>
 
         <!-- Swiper JS -->
-    <!--<script src="/pages/principal/swiper-bundle.min.js"></script>-->
+    <!--<script src="/principal/swiper-bundle.min.js"></script>-->
      <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
     <!-- JavaScript -->
-    <script src="/pages/principal/targetaSedeCantinas.js"></script>
+    <script src="/principal/targetaSedeCantinas.js"></script>
 </html>

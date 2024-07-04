@@ -98,13 +98,19 @@ const baseRoutesFrontend = {
 
   principalJefe: "/principal",
   principalAdministrador: "/principalAdministrador",
-  principalGerente: "/principalGerente"
+  principalGerente: "/principalGerente",
+
+  landinPages: "/landinPages",
 };
 
 app.get(baseRoutesFrontend.login, (req, res) =>
   res.sendFile(rutaFrontend + "/log/login.html")
 );
 
+
+app.get(baseRoutesFrontend.landinPages, (req, res) =>
+  res.sendFile(rutaFrontend + "/principal/landinPages.html")
+);
 
 
 

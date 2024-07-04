@@ -15,17 +15,10 @@ function entrar() {
     user,
     password,
   }
-
-  localStorage.setItem("usuarioSeleccionado", JSON.stringify(nuevoUsuario));
   
   if (user=== "jefe" && password ==="jefe") {
-      
-      window.location.href = "/principalJefe";
-      
-    
-
+      window.location.href = "/principal";
   } else if (user==="gerente" && password ==="gerente") {
-      
       window.location.href = "/principalGerente";
   } else if (user==="administrador" && password ==="administrador") {
      
