@@ -11,8 +11,8 @@ function crearFilasEnTabla(productosFiados) {
       nuevoProductoFiado.classList = "fila-tabla";
       nuevoProductoFiado.innerHTML = `
           <td data-titulo="nombre">${productoFiado.nombre}</td>
-          <td data-titulo="apellido">${productoFiado.precio}</td>
-          <td data-titulo="cedula">${productoFiado.tipo}</td>
+          <td data-titulo="precio">${productoFiado.precio}</td>
+          <td data-titulo="titulo">${productoFiado.tipo}</td>
           
           <td>
             <button>Eliminar</button>

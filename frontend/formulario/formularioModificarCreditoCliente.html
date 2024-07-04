@@ -69,6 +69,34 @@
                         <div class="input-box">
                             <label>ID del cliente</label>
                             <input type="text" name="id_cliente" id="id_cliente" placeholder="Introduce el id del cliente" required>
+                        </div >
+                         <div hidden>
+                            <label>Primero nombre del cliente</label>
+                            <input type="text" name="nombre_cliente" id="nombre_cliente" placeholder="Introduce tu primer nombre" readonly>
+                        </div >
+                        <div hidden>
+                            <label>Apellido del Cliente</label>
+                            <input type="text" name="apellido" id="apellido" placeholder="Introduce tu primer apellido" readonly>
+                        </div >
+                        <div hidden>
+                            <label>Segundo nombre del cliente</label>
+                            <input type="text" name="segundo_nombre" id="segundo_nombre" placeholder="Introduce tu segundo nombre" readonly>
+                        </div >
+                        <div hidden>
+                            <label>Segundo apellido del cliente</label>
+                            <input type="text" name="segundo_apellido" id="segundo_apellido" placeholder="Introduce tu segundo apellido" readonly>
+                        </div >
+                        <div hidden>
+                            <label>Numero de celuda</label>
+                            <input type="text" name="cedula" id="cedula" placeholder="Introduce tu numero de cedula" readonly>
+                        </div >
+                        <div hidden>
+                            <label>Deuda acumula</label>
+                            <input type="text" name="deuda_acomulada" id="deuda_acomulada" placeholder="Introduce la deuda acumulada" readonly>
+                        </div >
+                        <div hidden>
+                            <label>Precio del prestamo Aux</label>
+                            <input type="text" name="precioAux" id="precioAux" placeholder="Introduce el precio" readonly>
                         </div>
                     </div>
                         <div class="custom-popover">
@@ -116,5 +144,6 @@
         <script> agregarEnBaseDeDatos();</script>
     </body>
       <script src="/enviarInformacion/mandarCreditoClienteSeleccionadoDeTablaAFormulario.js"></script>
+      <script src="/enviarInformacion/mandarClienteSeleccionadoDeTablaAFormularioDeCreditoCliente.js"></script>
   
 </html>

@@ -8,6 +8,7 @@ console.log(creditoCliente);
 const idCreditoClienteElement = document.getElementById("id");
 const nombreCreditoClienteElement = document.getElementById("nombre");
 const precioCreditoClienteElement = document.getElementById("precio");
+const precioCreditoAuxClienteElement = document.getElementById("precioAux");
 const tipoCreditoClienteElement = document.getElementById("tipo");
 const idClienteElement = document.getElementById("id_cliente");
 
@@ -16,6 +17,7 @@ const idClienteElement = document.getElementById("id_cliente");
 idCreditoClienteElement.value = creditoCliente.id;
 nombreCreditoClienteElement.value = creditoCliente.nombre;
 precioCreditoClienteElement.value = creditoCliente.precio;
+precioCreditoAuxClienteElement.value = creditoCliente.precio;
 tipoCreditoClienteElement.value = creditoCliente.tipo;
 idClienteElement.value = creditoCliente.id_cliente;
 
