@@ -14,7 +14,7 @@ function crearFilasEnTabla(empleados) {
           <td data-titulo="cargo">${empleado.cargo}</td>
           <td data-titulo="sede">${empleado.local_donde_trabaja}</td>
           <td>
-           <button>Seleccionar</button>
+           <button>Eliminar</button>
           </td>
       `;
 

@@ -15,7 +15,7 @@ function crearFilasEnTabla(productosFiados) {
           <td data-titulo="cedula">${productoFiado.tipo}</td>
           
           <td>
-            <button>Seleccionar</button>
+            <button>Eliminar</button>
           </td>
       `;
 

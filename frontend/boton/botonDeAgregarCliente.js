@@ -1,5 +1,3 @@
-const { Console } = require("console");
-
 // En el archivo agregarClientes.js
 const url = "http://localhost:3000/api/v1/clients";
 
@@ -19,6 +17,7 @@ function agregarEnBaseDeDatos() {
       const deudaAcomulada = e.target.elements.deuda_acomulada.value;
 
       // Convierte "cedula" y "deuda_acomulada" a enteros y valida
+      /*
       const cedulaInt = cedula ? parseInt(cedula, 10) : null;
       const deudaAcomuladaInt = deudaAcomulada
         ? parseInt(deudaAcomulada, 10)
@@ -29,14 +28,16 @@ function agregarEnBaseDeDatos() {
         console.error("Cédula o deuda acumulada no son números válidos.");
         return;
       }
+*/
 
+      const cedulaInt = cedula;
       const nuevoCliente = {
         nombre,
         apellido,
         segundo_nombre: segundoNombre,
         segundo_apellido: segundoApellido,
-        cedula: cedulaInt,
-        deuda_acomulada: deudaAcomuladaInt,
+        cedula,
+        deuda_acomulada: deudaAcomulada,
       };
 
       console.log("Datos a enviar:", nuevoCliente);

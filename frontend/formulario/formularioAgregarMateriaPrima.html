@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="/sections/formularioBase.css">
     <link rel="stylesheet" href="/header/headerGeneral.css">
 
-  <title>Datos producto Materia Prima</title>
+  <title>Registrar producto Materia Prima</title>
  </head>
 <body>
 	<header>
@@ -42,7 +42,7 @@
 
 	<main>
           <div class="container">
-        <h2>Registrar Materia Prima</h2>
+        <h2>Registrar producto Materia Prima</h2>
        <form id="form-first">
            <div>
                 <div class="details personal">
@@ -50,7 +50,7 @@
                     <div class="fields">
                         <div class="input-box">
                             <label>Nombre</label>
-                            <input type="text" name="nombre" placeholder="Introduce el nombre de la materia prima" required>
+                            <input type="text" name="nombre" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*$" placeholder="Introduce el nombre de la materia prima" required>
                         </div>
                         <div class="input-box">
                             <label>Precio Unitario</label>

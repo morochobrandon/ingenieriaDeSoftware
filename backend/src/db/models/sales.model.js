@@ -40,10 +40,6 @@ const SaleSchema = {
     allowNull: false,
     type: DataTypes.FLOAT,
   },
-  credito: {
-    allowNull: false,
-    type: DataTypes.FLOAT,
-  },
   transferencia_bs: {
     allowNull: false,
     type: DataTypes.FLOAT,

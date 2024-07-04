@@ -11,7 +11,7 @@ function crearFilasEnTabla(empleados) {
       const nuevoEmpleado = document.createElement("tr");
       nuevoEmpleado.classList = "fila-tabla";
       nuevoEmpleado.innerHTML = `
-          <td data-titulo="cedula">${empleado.cedula}$</td>
+          <td data-titulo="cedula">${empleado.cedula}</td>
           <td data-titulo="nombre">${empleado.nombre}</td>
           <td data-titulo="apellido">${empleado.apellido}</td>
           <td data-titulo="cargo">${empleado.cargo}</td>    

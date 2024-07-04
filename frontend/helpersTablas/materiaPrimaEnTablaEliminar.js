@@ -9,12 +9,12 @@ function crearFilasEnTabla(materiasPrimas) {
       nuevaMateriaPrima.classList = "fila-tabla";
       nuevaMateriaPrima.innerHTML = `
           <td data-titulo="nombre">${materiaPrima.nombre}</td>
-          <td data-titulo="precio Unico">${materiaPrima.precio_unitario}</td>
-          <td data-titulo="precio total">${materiaPrima.precio_total}</td>
-          <td data-titulo="cantidad">${materiaPrima.cantidad}$</td>
+          <td data-titulo="precio Unico">${materiaPrima.precio_unitario}$</td>
+          <td data-titulo="precio total">${materiaPrima.precio_total}$</td>
+          <td data-titulo="cantidad">${materiaPrima.cantidad}</td>
           <td data-titulo="id">${materiaPrima.id_proveedor}</td>
           <td>
-              <button>Seleccionar</button>
+              <button>Eliminar</button>
           </td>
       `;
 

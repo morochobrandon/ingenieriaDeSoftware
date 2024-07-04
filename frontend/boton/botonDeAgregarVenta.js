@@ -14,7 +14,6 @@ function agregarEnBaseDeDatos() {
       const efectivo_divisa = e.target.elements.efectivo_divisa.value;
       const efectivo_euros = e.target.elements.efectivo_euros.value;
       const zelle = e.target.elements.zelle.value;
-      const credito = e.target.elements.credito.value;
       const transferencia_bs = e.target.elements.transferencia_bs.value;
       const pdv_tdd_provincial_bs =
         e.target.elements.pdv_tdd_provincial_bs.value;
@@ -33,7 +32,6 @@ function agregarEnBaseDeDatos() {
         efectivo_divisa: parseFloat(efectivo_divisa),
         efectivo_euros: parseFloat(efectivo_euros),
         zelle: parseFloat(zelle),
-        credito: parseFloat(credito),
         transferencia_bs: parseFloat(transferencia_bs),
         pdv_tdd_provincial_bs: parseFloat(pdv_tdd_provincial_bs),
         pdv_tdc_provincial_bs: parseFloat(pdv_tdc_provincial_bs),
@@ -68,7 +66,6 @@ function agregarEnBaseDeDatos() {
           e.target.elements.efectivo_divisa.value = "";
           e.target.elements.efectivo_euros.value = "";
           e.target.elements.zelle.value = "";
-          e.target.elements.credito.value = "";
           e.target.elements.transferencia_bs.value = "";
           e.target.elements.pdv_tdd_provincial_bs.value = "";
           e.target.elements.pdv_tdc_provincial_bs.value = "";

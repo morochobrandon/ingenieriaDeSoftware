@@ -1,110 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MERIANDES</title>
-
-    <link rel="stylesheet" href="/landinPages/landinPages.css" />
-		<link rel="stylesheet" href="/Footer/FooterGeneral.css">
-		<link rel="stylesheet" href="/Header/HeaderGeneral.css">
+<html lang="es">
+	<head>
+		
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>MERIANDES</title>
+		<link rel="stylesheet" href="/principal/principal.css" />
+		<link rel="stylesheet" href="/footer/FooterGeneral.css">
+		<link rel="stylesheet" href="/Header/headerGeneral.css">
 		 <!-- Swiper CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-    />
-
-    <style>
-      body {
-        margin: 0;
-      }
-      .swiper-hero {
-        width: 100%;
-        max-width: 1600px;
-      }
-
-      .swiper-hero .swiper-slide {
-        width: 250px;
-      }
-
-      .swiper-hero img {
-        height: 255px;
-        width: 100%;
-        object-fit: cover;
-      }
-
-      @media (min-width: 1024px) {
-        .swiper-hero img {
-          height: 344px;
-        }
-      }
-
-      .swiper-hero .swiper-button-prev,
-      .swiper-hero .swiper-button-next {
-        --swiper-navigation-size: 20px;
-        background-color: white;
-        height: 70px;
-        width: 50px;
-        margin-top: -35px;
-
-        opacity: 0;
-        transition: opacity 0.3s;
-      }
-
-      .swiper-hero .swiper-button-prev {
-        border-radius: 0 65px 65px 0;
-        left: -10px;
-      }
-      .swiper-hero .swiper-button-next {
-        border-radius: 65px 0 0 65px;
-        right: -10px;
-      }
-
-      .swiper-hero:hover .swiper-button-prev,
-      .swiper-hero:hover .swiper-button-next {
-        opacity: 1;
-      }
-
-      .swiper-hero .swiper-pagination {
-        --swiper-pagination-color: white;
-        --swiper-pagination-bullet-size: 6px;
-        --swiper-pagination-bullet-inactive-color: #000;
-        --swiper-pagination-bullet-inactive-opacity: 0.25;
-        --swiper-pagination-bullet-opacity: 1;
-        --swiper-pagination-bullet-horizontal-gap: 2px;
-      }
-
-      .swiper-hero .swiper-pagination-bullet {
-        box-shadow: inset 0 0 0 1px #fff;
-      }
-
-      .swiper-hero .swiper-pagination-bullet-active {
-        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
-      }
-    </style>
-  </head>
-  <body>
-
-    <header>
-			<div class="logo">	<a href=""><img src="/image/DiminutoLogo.png" alt="Logo" id="logo"></a></div>
+		 <!--<link rel="stylesheet" href="/pages/principal/swiper-bundle.min.css"> -->
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+		 <!-- CSS -->
+		 <link rel="stylesheet" href="/pages/principal/targetaSedeCantinas.css">
+        
+        <!-- CSS -->
+        <!-- <link rel="stylesheet" href="/pages/principal/principal.css"> -->
+		
+	</head>
+	<body>
+		<header>
+			<div class="logo">	<a href="/admin"><img src="/assets/image/DiminutoLogo.png" alt="Logo" id="logo"></a></div>
 			<input type="checkbox" id="nav_check" hidden>
 			<nav>
 				<ul>
 					<li>
-						<a id="inicio" href="#nomina">Nómina</a>
+						<a id='inicio'href="#inicio">Inicio</a>
+					</li>
+					<li>
+						<a href="#ubicacion">Ubicación</a>
+					</li>
+					<li>
+						<a href="#mejores">Mejores Productos</a>
+					</li>
+					<li>
+						<a href="#especiales">Especiales</a>
+					</li>
+					<li>
+						<a href="">Iniciar Sesión</a>
 					</li>
 				</ul>
 			</nav>
 			<label for="nav_check" class="hamburger">
-				
+				<div></div>
+				<div></div>
+				<div></div>
 			</label>
 		</header>
-    <section id class="banner">
+	
+
+		<section id class="banner">
 			<div class="content-banner">
 				<p>Sabores que encantan</p>
 				<h2>100% Natural <br />Comida Fresca</h2>
-				<a href="/">Sistema administrativo</a>
+				<a href="#">Sistema administrativo</a>
 			</div>
 		</section>
 
@@ -140,56 +93,39 @@
 				</div>
 			</section>
 
-    <!-- Slider main container -->
+			<section id="ubicacion" class="container top-categories">
+				<!-- Slider main container -->
     <div class="swiper swiper-hero">
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <!-- Slides -->
-      <div class="swiper-slide">
+        <div class="swiper-slide">
           <img
-            src="/landinPages/img/banner1.jpg"
+            src="/pages/image/profile1.png"
             alt=""
           />
         </div>
         <div class="swiper-slide">
           <img
-            src="/landinPages/img/banner2.jpg"
+            src="/pages/image/profile2.png"
             alt=""
           />
         </div>
         <div class="swiper-slide">
           <img
-            src="/landinPages/img/banner3.jpeg"
+            src="/pages/image/profile3.png"
             alt=""
           />
         </div>
         <div class="swiper-slide">
           <img
-            src="/landinPages/img/banner4.jpg"
+            src="/pages/image/profile4.png"
             alt=""
           />
         </div>
         <div class="swiper-slide">
           <img
-            src="/landinPages/img/banner5.jpg"
-            alt=""
-          />
-        </div>
-        <div class="swiper-slide">
-          <img
-            src="/landinPages/img/banner6.jpg"
-            alt=""
-          />
-        </div>
-        <div class="swiper-slide">
-          <img
-            src="/landinPages/img/banner7.jpg"
-            alt=""
-          />
-        </div>
-        <div class="swiper-slide">
-          <img
-            src="/landinPages/img/banner8.jpg"
+            src="/pages/image/profile5.png"
             alt=""
           />
         </div>
@@ -204,99 +140,177 @@
       <!-- If we need scrollbar -->
       <!-- <div class="swiper-scrollbar"></div> -->
     </div>
+	</section>
 
+			<section id="mejores" class="container top-products">
+				<h1 class="heading-1">Mejores Productos</h1>
 
-			<section id="nomina" class="container top-products">
-				<h1 class="heading-1">Gestión de Nómina</h1>
-
+				<div class="container-options">
+					<span class="active">Destacados</span>
+					<span>Más recientes</span>
+					<span>Mejores Vendidos</span>
+				</div>
 
 				<div class="container-products">
 					<!-- Producto 1 -->
 					<div class="card-product">
 						<div class="container-img">
-							<img src="/landinPages/img/employee-id-svgrepo-com.svg" alt="Cafe Irish" />
-						
+							<img src="/pages/image/cafe-irish.jpg" alt="Cafe Irish" />
+							<span class="discount">-13%</span>
+							<div class="button-group">
+								<span>
+									<i class="fa-regular fa-eye"></i>
+								</span>
+								<span>
+									<i class="fa-regular fa-heart"></i>
+								</span>
+								<span>
+									<i class="fa-solid fa-code-compare"></i>
+								</span>
+							</div>
 						</div>
 						<div class="content-card-product">
-							<p class="price">Agregar Empleado</p>
+							<div class="stars">
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-regular fa-star"></i>
+							</div>
+							<h3>Tequeños</h3>
+							
+							<p class="price">$4.60 <span>$5.30</span></p>
 						</div>
 					</div>
 					<!-- Producto 2 -->
 					<div class="card-product">
 						<div class="container-img">
 							<img
-								src="/landinPages/img/employee-for-looking-svgrepo-com.svg"
+								src="/pages/image/cafe-ingles.jpg"
 								alt="Cafe incafe-ingles.jpg"
 							/>
-							
+							<span class="discount">-22%</span>
+							<div class="button-group">
+								<span>
+									<i class="fa-regular fa-eye"></i>
+								</span>
+								<span>
+									<i class="fa-regular fa-heart"></i>
+								</span>
+								<span>
+									<i class="fa-solid fa-code-compare"></i>
+								</span>
+							</div>
 						</div>
 						<div class="content-card-product">
-							<p class="price">Consultar Empleado</p>
+							<div class="stars">
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-regular fa-star"></i>
+								<i class="fa-regular fa-star"></i>
+							</div>
+							<h3>Pasta a la marinera</h3>
+							
+							<p class="price">$5.70 <span>$7.30</span></p>
 						</div>
 					</div>
 					<!--  -->
 					<div class="card-product">
 						<div class="container-img">
 							<img
-								src="/landinPages/img/employee-card-svgrepo-com.svg"
+								src="/pages/image/cafe-australiano.jpg"
 								alt="Cafe Australiano"
 							/>
-							
+							<div class="button-group">
+								<span>
+									<i class="fa-regular fa-eye"></i>
+								</span>
+								<span>
+									<i class="fa-regular fa-heart"></i>
+								</span>
+								<span>
+									<i class="fa-solid fa-code-compare"></i>
+								</span>
+							</div>
 						</div>
 						<div class="content-card-product">
+							<div class="stars">
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+							</div>
+							<h3>Cordón blue</h3>
 							
-							
-							<p class="price">Modificar Empleado</p>
+							<p class="price">$3.20</p>
 						</div>
 					</div>
 					<!--  -->
 					<div class="card-product">
 						<div class="container-img">
-							<img src="/landinPages/img/delete-user-circle-svgrepo-com.svg" alt="Cafe Helado" />
-							
+							<img src="/pages/image/cafe-helado.jpg" alt="Cafe Helado" />
+							<div class="button-group">
+								<span>
+									<i class="fa-regular fa-eye"></i>
+								</span>
+								<span>
+									<i class="fa-regular fa-heart"></i>
+								</span>
+								<span>
+									<i class="fa-solid fa-code-compare"></i>
+								</span>
+							</div>
 						</div>
 						<div class="content-card-product">
+							<div class="stars">
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-regular fa-star"></i>
+							</div>
+							<h3>Empanadas</h3>
 							
-							<p class="price">Eliminar Empleado</p>
-						
-							
+							<p class="price">$5.60</p>
 						</div>
 					</div>
 				</div>
 			</section>
 
-            <section class="gallery">
+			<section class="gallery">
 				<img
-					src="/landinPages/img/gallery1.jpg"
+					src="/pages/image/gallery1.jpg"
 					alt="Gallery Img1"
 					class="gallery-img-1"
 				/><img
-					src="/landinPages/img/gallery2.jpg"
+					src="/pages/image/gallery2.jpg"
 					alt="Gallery Img2"
 					class="gallery-img-2"
 				/><img
-					src="/landinPages/img/gallery3.jpg"
+					src="/pages/image/gallery3.jpg"
 					alt="Gallery Img3"
 					class="gallery-img-3"
 				/><img
-					src="/landinPages/img/gallery4.jpg"
+					src="/pages/image/gallery4.jpg"
 					alt="Gallery Img4"
 					class="gallery-img-4"
 				/><img
-					src="/landinPages/img/gallery5.jpg"
+					src="/pages/image/gallery5.jpg"
 					alt="Gallery Img5"
 					class="gallery-img-5"
 				/>
 			</section>
 
-            <section class="container specials">
+			<section class="container specials">
 				<h1 id='especiales'class="heading-1">Especiales de la semana</h1>
 
 				<div class="container-products">
 					<!-- Producto 1 -->
 					<div class="card-product">
 						<div class="container-img">
-							<img src="/landinPages/img/cafe-irish.jpg" alt="Cafe Irish" />
+							<img src="/pages/image/cafe-irish.jpg" alt="Cafe Irish" />
 							<span class="discount">-13%</span>
 							<div class="button-group">
 								<span>
@@ -327,7 +341,7 @@
 					<div class="card-product">
 						<div class="container-img">
 							<img
-								src="/landinPages/img/cafe-ingles.jpg"
+								src="/pages/image/cafe-ingles.jpg"
 								alt="Cafe incafe-ingles.jpg"
 							/>
 							<span class="discount">-22%</span>
@@ -360,7 +374,7 @@
 					<!--  -->
 					<div class="card-product">
 						<div class="container-img">
-							<img src="/landinPages/img/cafe-viena.jpg" alt="Cafe Viena" />
+							<img src="/pages/image/cafe-viena.jpg" alt="Cafe Viena" />
 							<span class="discount">-30%</span>
 							<div class="button-group">
 								<span>
@@ -390,7 +404,7 @@
 					<!--  -->
 					<div class="card-product">
 						<div class="container-img">
-							<img src="/landinPages/img/cafe-liqueurs.jpg" alt="Cafe Liqueurs" />
+							<img src="/pages/image/cafe-liqueurs.jpg" alt="Cafe Liqueurs" />
 							<div class="button-group">
 								<span>
 									<i class="fa-regular fa-eye"></i>
@@ -419,13 +433,13 @@
 				</div>
 			</section>
 
-            <section class="container blogs">
+			<section class="container blogs">
 				<h1 class="heading-1">Últimos Blogs</h1>
 
 				<div class="container-blogs">
 					<div class="card-blog">
 						<div class="container-img">
-							<img src="/landinPages/img/blog-1.jpg" alt="Imagen Blog 1" />
+							<img src="/pages/image/blog-1.jpg" alt="Imagen Blog 1" />
 							<div class="button-group-blog">
 								<span>
 									<i class="fa-solid fa-magnifying-glass"></i>
@@ -448,7 +462,7 @@
 					</div>
 					<div class="card-blog">
 						<div class="container-img">
-							<img src="/landinPages/img/blog-2.jpg" alt="Imagen Blog 2" />
+							<img src="/pages/image/blog-2.jpg" alt="Imagen Blog 2" />
 							<div class="button-group-blog">
 								<span>
 									<i class="fa-solid fa-magnifying-glass"></i>
@@ -471,7 +485,7 @@
 					</div>
 					<div class="card-blog">
 						<div class="container-img">
-							<img src="/landinPages/img/blog-3.jpg" alt="Imagen Blog 3" />
+							<img src="/pages/image/blog-3.jpg" alt="Imagen Blog 3" />
 							<div class="button-group-blog">
 								<span>
 									<i class="fa-solid fa-magnifying-glass"></i>
@@ -494,13 +508,14 @@
 					</div>
 				</div>
 			</section>
+		</main>
 
-            <footer class="pie-pagina">
+		<footer class="pie-pagina">
 			<div class="grupo-1">
 				<div class="box">
 					<figure>
 						<a href="#">
-							<img src="/image/PequeñoLogo.png" alt="Logo de Meriandes">
+							<img src="/assets/image/PequeñoLogo.png" alt="Logo de Meriandes">
 						</a>
 					</figure>
 				</div>
@@ -524,44 +539,16 @@
 			</div>
 		</footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script>
-      const swiper = new Swiper(".swiper-hero", {
-        // Optional parameters
-        // slidesPerView: "auto",
-        // spaceBetween: 15,
-        // slidesPerGroupAuto: true,
+		<script
+			src="https://kit.fontawesome.com/81581fb069.js"
+			crossorigin="anonymous"
+		></script>
+	</body>
 
-        direction: "horizontal",
-        loop: true,
-        // allowTouchMove: true,
-        // effect: "cube",
-        autoplay: {
-          delay: 10000,
-          pauseOnMouseEnter: true,
-          disableOnInteraction: false,
-        },
+        <!-- Swiper JS -->
+    <!--<script src="/pages/principal/swiper-bundle.min.js"></script>-->
+     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
-        // If we need pagination
-        pagination: {
-          el: ".swiper-pagination",
-          // type: "progressbar"
-          clickable: true,
-          // dynamicBullets: true
-        },
-
-        // Navigation arrows
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-
-        // And if we need scrollbar
-        // scrollbar: {
-        //   el: ".swiper-scrollbar",
-        //   draggable: true,
-        // },
-      });
-    </script>
-  </body>
+    <!-- JavaScript -->
+    <script src="/pages/principal/targetaSedeCantinas.js"></script>
 </html>

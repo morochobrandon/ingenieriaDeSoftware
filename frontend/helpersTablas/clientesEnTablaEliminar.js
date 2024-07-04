@@ -13,7 +13,7 @@ function crearFilasEnTabla(clientes) {
           <td data-titulo="cedula">${cliente.cedula}</td>
           <td data-titulo="deuda">${cliente.deuda_acomulada}$</td>
           <td>
-           <button>Seleccionar</button>
+           <button>Eliminar</button>
           </td>
       `;
 

@@ -31,7 +31,7 @@ function agregarEnBaseDeDatos() {
             const facturas = data.map((data) => data.nro_factura);
             const facturasFiltradas = facturas.filter((nro_factura) => nro_factura == nro_facturaInt)
            
-
+            /*
             if (facturasFiltradas.length > 0) {
                 console.log("Ya existe un Proveedor con este numero de factura");
                 document.getElementById("mensaje-error").style.display = "block";
@@ -43,6 +43,7 @@ function agregarEnBaseDeDatos() {
                 
             } else {
                 console.log("No se encontró un proveedor con este numero de factura");
+              */
                 try {
                   // Realiza la solicitud POST al servidor
                   const res = await fetch(
@@ -79,7 +80,7 @@ function agregarEnBaseDeDatos() {
                 } catch (error) {
                   console.error("Error en la solicitud:", error);
                 }
-            }
+           // }
         } else {
             console.error("Error al obtener datos:", response.status);
         }

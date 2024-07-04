@@ -12,7 +12,7 @@ function crearFilasEnTabla(proveedores) {
           <td data-titulo="telefono">${proveedor.nro_telefono}</td>
           <td data-titulo="telefono">${proveedor.nro_factura}</td>
           <td>
-            <button>Seleccionar</button>
+            <button>Eliminar</button>
           </td>
       `;
       contenedorProveedores.appendChild(nuevoProveedor);

@@ -96,9 +96,9 @@ const baseRoutesFrontend = {
   modificarCreditoClienteEspecifico: "/modificar/credito/cliente/especifico",
   modificarVentaEspecifico: "/modificar/venta/especifico", //
 
-  landinPages: "/landinPages",
-  landinPagesAdministrador: "/landinPagesA",
-  landinPagesGerente: "/landinPagesG"
+  principalJefe: "/principalJefe",
+  principalAdministrador: "/principalAdministrador",
+  principalGerente: "/principalGerente"
 };
 
 app.get(baseRoutesFrontend.login, (req, res) =>
@@ -447,15 +447,15 @@ app.get(baseRoutesFrontend.eliminarCliente, (req, res) =>
 
 // ----- landingPages  -------
 
-app.get(baseRoutesFrontend.landinPages, (req,res) =>
-  res.sendFile(rutaFrontend + "/landinPages/landinPagesJefe.html") 
+app.get(baseRoutesFrontend.principalJefe, (req,res) =>
+  res.sendFile(rutaFrontend + "/principal/principalJefe.html") 
 );
 
-app.get(baseRoutesFrontend.landinPagesAdministrador, (req,res) =>
-  res.sendFile(rutaFrontend + "/landinPages/landinPagesAdministrador.html") 
+app.get(baseRoutesFrontend.principalAdministrador, (req,res) =>
+  res.sendFile(rutaFrontend + "/principal/principalAdministrador.html") 
 );
-app.get(baseRoutesFrontend.landinPagesGerente, (req,res) =>
-  res.sendFile(rutaFrontend + "/landinPages/landinPagesGerente.html") 
+app.get(baseRoutesFrontend.principalGerente, (req,res) =>
+  res.sendFile(rutaFrontend + "/principal/principalGerente.html") 
 );
 
 //Rutas
