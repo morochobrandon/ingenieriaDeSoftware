@@ -9,7 +9,6 @@ const pagoMovil_bsElement = document.getElementById("pagoMovil_bs");
 const efectivo_divisaElement = document.getElementById("efectivo_divisa");
 const efectivo_eurosElement = document.getElementById("efectivo_euros");
 const zelleElement = document.getElementById("zelle");
-const creditoElement = document.getElementById("credito");
 const transferencia_bsElement = document.getElementById("transferencia_bs");
 const pdv_tdd_provincial_bsElement = document.getElementById(
   "pdv_tdd_provincial_bs"
@@ -39,7 +38,6 @@ pagoMovil_bsElement.value = ventaRecuperada.pagoMovil_bs;
 efectivo_divisaElement.value = ventaRecuperada.efectivo_divisa;
 efectivo_eurosElement.value = ventaRecuperada.efectivo_euros;
 zelleElement.value = ventaRecuperada.zelle;
-creditoElement.value = ventaRecuperada.credito;
 transferencia_bsElement.value = ventaRecuperada.transferencia_bs;
 pdv_tdd_provincial_bsElement.value = ventaRecuperada.pdv_tdd_provincial_bs;
 pdv_tdc_provincial_bsElement.value = ventaRecuperada.pdv_tdc_provincial_bs;

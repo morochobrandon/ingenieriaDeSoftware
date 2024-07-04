@@ -96,7 +96,7 @@ const baseRoutesFrontend = {
   modificarCreditoClienteEspecifico: "/modificar/credito/cliente/especifico",
   modificarVentaEspecifico: "/modificar/venta/especifico", //
 
-  principalJefe: "/principalJefe",
+  principalJefe: "/principal",
   principalAdministrador: "/principalAdministrador",
   principalGerente: "/principalGerente"
 };
@@ -445,7 +445,7 @@ app.get(baseRoutesFrontend.eliminarCliente, (req, res) =>
 );
 
 
-// ----- landingPages  -------
+// ----- Principal  -------
 
 app.get(baseRoutesFrontend.principalJefe, (req,res) =>
   res.sendFile(rutaFrontend + "/principal/principalJefe.html") 

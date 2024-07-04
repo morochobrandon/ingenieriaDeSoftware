@@ -103,17 +103,14 @@ header nav ul li a.active {
             position: absolute;
             width: 100%;
             left: 0;
-            /* Asegúrate de que el nav esté alineado horizontalmente */
             top: -100%;
             /* Posición inicial fuera de la pantalla, por arriba */
             background: #F97316;
             padding: 30px;
             transition: 0s;
-            /* Ajusta la duración de la transición según prefieras */
-        }
+           }
     
         header #nav_check:checked~nav {
-            top: 70px;
-            /* La nueva posición del nav cuando esté visible */
-        }
+            top: 85px;
+            }
 }
