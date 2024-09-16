@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" href="/footer/FooterGeneral.css">
+	<link rel="stylesheet" href="/sections/formularioBase.css">
+    <link rel="stylesheet" href="/Header/headerGeneral.css">
+
+    <title>Datos clientes</title>
+</head>
+<body>
+	<header>
+        <div class="logo">	<a href="/admin"><img src="/image/DiminutoLogo.png" alt="Logo" id="logo"></a></div>
+        <input type="checkbox" id="nav_check" hidden>
+        <nav>
+            <ul>
+              <li>
+                    <a href="">Préstamos</a>
+                </li>
+                <li>
+                    <a href="">Ventas</a>
+                </li>
+                <li>
+                    <a href="">Proveedor</a>
+                </li>
+                <li>
+                    <a href="">Materia Prima</a>
+                </li>
+                <li>
+                    <a href="">Cerrar Sesión</a>
+                </li>
+            </ul>
+            
+        </nav>
+        <label for="nav_check" class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+    </header>
+
+
+	<main>
+          <div class="container">
+        <h2>Registrar Productos Ventas</h2>
+        <form id="form-first">
+            <div>
+                <div class="details personal">
+                    <span class="title">Detalles del producto ventas</span>
+                    <div class="fields">
+                        <div class="input-box">
+                            <label>Nombre</label>
+                            <input type="text" placeholder="Introduce el nombre" required>
+                        </div>
+                        <div class="input-box">
+                            <label>Correo</label>
+                            <input type="text" placeholder="Introduce el correo" required>
+                        </div>
+                        <div class="input-box">
+                            <label>Passsword</label>
+                            <input type="text" placeholder="Introduce el tipo" required>
+                        </div>
+                    </div>
+                </div>
+                        <div class="custom-popover">
+                          <button type="submit" class="boton-grande" id="btn-agregar">
+                            <span class="button-container">Agregar</span>
+                          </button>
+                          <div class="popover-content" id="mensaje-exito" style="display: none;">
+                            Cliente agregado con éxito
+                          </div>
+                        </div>
+            </div> 
+
+
+            
+        </form>
+    </div>
+	</main>
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#">
+                        <img src="/image/PequeñoLogo.png" alt="Logo de Meriandes">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h3>SOBRE NOSOTROS</h3>
+                <p>En Meriandes, nuestra misión es proporcionar comidas nutritivas y equilibradas a los estudiantes de las escuelas de Caracas</p>
+                <p>Creemos que una buena alimentación es esencial para el desarrollo físico y mental de los niños y niñas, y estamos comprometidos a garantizar que cada estudiante tenga acceso a alimentos de calidad. </p>
+            </div>
+            <div class="box">
+                <h3>SIGUENOS</h3>
+                <div class="red-social">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2024 <b>Meriandes</b> - Las mejores comidas</small>
+        </div>
+    </footer>
+   <script src="/boton/botonDeAgregar.js"></script>
+      <script> agregarEnBaseDeDatos();</script>
+    </body>
+</html>

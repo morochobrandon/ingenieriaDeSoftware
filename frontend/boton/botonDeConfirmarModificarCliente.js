@@ -36,7 +36,7 @@ function agregarEnBaseDeDatos() {
             const cedulasFiltradas = cedulas.filter((cedula) => cedula == cedulaInt)
            
 
-            if (cedulasFiltradas.length > 0) {
+            if (cedulasFiltradas.length > 1) {
                 console.log("Ya existe un Proveedor con este numero de factura");
                 document.getElementById("mensaje-error").style.display = "block";
           
